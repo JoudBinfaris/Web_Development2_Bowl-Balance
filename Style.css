@@ -1,8 +1,8 @@
-#orangebg {
+#bg {
     background-image: url(bg.png);
 }
 
-#recipeSheet {
+#Sheet {
     background-color: rgba(255, 255, 255, 0.4);
     width: 60rem;
     margin-left: 20%;
@@ -17,7 +17,7 @@
 
 
 }
-
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------viewRecipe Page*/
 .flexRow {
     display: flex;
     flex-direction: row;
@@ -30,6 +30,14 @@
     margin-left: 3rem;
 }
 
+.sectionHeader{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+}
+.sectionText{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
 
 #bowlImg {
     width: 17rem;
@@ -40,7 +48,8 @@
 
 #report,
 #like,
-#fav {
+#fav
+{
 
 
     padding: 0.5rem 0.8rem;
@@ -71,6 +80,27 @@
 
 }
 
+#post{
+    padding: 0.3rem 0.7rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+#report:hover {
+    background-color: rgb(210, 105, 105);
+}
+
+#like:hover,
+#fav:hover {
+    background-color: rgb(90, 180, 75);
+}
+
+#post:hover {
+    background-color:gray;
+}
+
+
 
 
 .rname {
@@ -94,3 +124,17 @@
 .rdescription {
     font-size: 1.5rem;
 }
+
+#comment{
+    border-radius: 1rem;
+}
+
+.profile{
+    width:4rem;
+}
+
+#comments p{
+    margin-left: 1rem;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------viewRecipe Page ends*/
