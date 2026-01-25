@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Recipes</title>
+
+<style>
+/* ===== Namespace: ar- ===== */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,Arial,sans-serif;
+  background:#fff;
+  color:#111;
+}
+
+/* page */
+.ar-page{max-width:1100px;margin:auto;padding:24px}
+
+/* header + filter */
+.ar-top{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;flex-wrap:wrap
+}
+.ar-title{margin:0;font-size:28px;font-weight:900}
+.ar-filter{display:flex;gap:10px}
+#arCat{
+  padding:8px 12px;font-weight:800;border:2px solid #111;
+  border-radius:10px;background:#fff
+}
+#arGo{
+  padding:8px 14px;font-weight:900;border:2px solid #111;
+  border-radius:10px;background:#111;color:#fff;cursor:pointer
+}
+#arGo:hover{opacity:.9}
+
+/* list */
+.ar-list{
+  margin-top:40px;display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px 20px
+}
+@media(max-width:900px){.ar-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ar-list{grid-template-columns:1fr}}
+
+/* item */
+.ar-item{position:relative;height:260px}
+
+/* face */
+.ar-face{display:flex;justify-content:center;align-items:center;transition:opacity .25s ease}
+.ar-pic{
+  width:170px;height:170px;border-radius:50%;
+  object-fit:cover;box-shadow:0 14px 30px rgba(0,0,0,.15)
+}
+
+/* pop */
+.ar-pop{
+  position:absolute;top:0;left:50%;
+  transform:translateX(-50%) translateY(10px);
+  width:270px;background:#fff;border:4px solid #111;
+  border-radius:24px;padding:14px;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease
+}
+
+/* hover behavior */
+.ar-item:hover .ar-face{opacity:0}
+.ar-item:hover .ar-pop{
+  opacity:1;pointer-events:auto;
+  transform:translateX(-50%) translateY(0)
+}
+
+/* pop content */
+.ar-popIn{display:flex;flex-direction:column;gap:10px}
+.ar-popPic{
+  width:150px;height:150px;border-radius:50%;
+  object-fit:cover;align-self:center;
+  box-shadow:0 12px 26px rgba(0,0,0,.1)
+}
+.ar-line{margin:0;font-size:15px;font-weight:700}
+.ar-key{font-weight:900}
+
+/* link in pop */
+.ar-popLink{font-weight:900;color:#111;text-decoration:underline}
+.ar-popLink:hover{opacity:.75}
+
+/* creator */
+.ar-maker{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ar-makerImg{
+  width:26px;height:26px;border-radius:50%;
+  border:2px solid #111;object-fit:cover
+}
+</style>
+</head>
+
+<body>
+<main class="ar-page">
+
+  <header class="ar-top">
+    <h1 class="ar-title">Recipes</h1>
+    <div class="ar-filter">
+      <select id="arCat">
+        <option value="ALL">View All</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+      </select>
+      <button id="arGo" type="button">Filter</button>
+    </div>
+  </header>
+
+  <section class="ar-list">
+
+    <!-- 1 -->
+    <article class="ar-item" data-cat="Breakfast">
+      <div class="ar-face">
+        <img class="ar-pic" src="../IMAGES/acai.png" alt="Acai Bowl">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/acai.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Acai Bowl</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/sara.png" alt="">
+            Sara Abdullah
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 150</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Breakfast</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="ar-item" data-cat="Breakfast">
+      <div class="ar-face">
+        <img class="ar-pic" src="../IMAGES/Bg.png" alt="Berry Yogurt">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/yogurt.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Berry Yogurt</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/noor.png" alt="">
+            Noor
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 120</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Breakfast</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="ar-item" data-cat="Breakfast">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Banana Granola">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Banana Granola</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Breakfast</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="ar-item" data-cat="Breakfast">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Apple Muesli">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Apple Muesli</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Breakfast</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5-->
+    <article class="ar-item" data-cat="Breakfast">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Shakshuka">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Shakshuka</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Breakfast</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="ar-item" data-cat="Breakfast">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Scrambled Eggs">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Scrambled Eggs</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Breakfast</p>
+        </div>
+      </div>
+    </article>
+
+     <!-- Lunch -->
+
+    <!-- 7 -->
+    <article class="ar-item" data-cat="Lunch">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Grilled Chicken Bowl">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Grilled Chicken Bowl</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Lunch</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="ar-item" data-cat="Lunch">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Bibimbap">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Bibimbap</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Lunch</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="ar-item" data-cat="Lunch">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Kimchi Greens">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Kimchi Greens</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Lunch</p>
+        </div>
+      </div>
+    </article>
+    
+    <!-- 10 -->
+    <article class="ar-item" data-cat="Lunch">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Shrimp Noodles">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Shrimp Noodles</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Lunch</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11 -->
+    <article class="ar-item" data-cat="Lunch">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Carbonara">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Carbonara</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Lunch</p>
+        </div>
+      </div>
+    </article> 
+
+    <!-- 12 -->
+    <article class="ar-item" data-cat="Lunch">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Salmon Bowl">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Salmon Bowl</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Lunch</p>
+        </div>
+      </div>
+    </article>
+
+     <!-- Dinner-->
+
+    <!-- 13 -->
+    <article class="ar-item" data-cat="Dinner">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Chicken Stir-Fry">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Chicken Stir-Fry</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Dinner</p>
+        </div>
+      </div>
+    </article>
+    <!-- 14 -->
+    <article class="ar-item" data-cat="Dinner">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Butter Chicken">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Butter Chicken</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Dinner</p>
+        </div>
+      </div>
+    </article>
+    <!-- 15 -->
+    <article class="ar-item" data-cat="Dinner">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Chicken Curry">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Chicken Curry</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Dinner</p>
+        </div>
+      </div>
+    </article>
+    <!-- 16 -->
+    <article class="ar-item" data-cat="Dinner">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Kung Pao Chicken">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Kung Pao Chicken</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Dinner</p>
+        </div>
+      </div>
+    </article>
+    <!-- 17 -->
+    <article class="ar-item" data-cat="Dinner">
+      <div class="ar-face">
+        <img class="ar-pic" src="IMAGES/shakshuka.png" alt="Pasta Bolognese">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="IMAGES/shakshuka.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Pasta Bolognese</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Dinner</p>
+        </div>
+      </div>
+    </article>
+    <!-- 18 -->
+    <article class="ar-item" data-cat="Dinner">
+      <div class="ar-face">
+        <img class="ar-pic" src="../IMAGES/Copy of Bowl & Balance.png" alt="Poke Bowl">
+      </div>
+      <div class="ar-pop">
+        <div class="ar-popIn">
+          <img class="ar-popPic" src="../IMAGES/Copy of Bowl & Balance.png" alt="">
+          <p class="ar-line">
+            <span class="ar-key">Recipe name:</span>
+            <a class="ar-popLink" href="ViewRecipe.html">Poke Bowl</a>
+          </p>
+          <p class="ar-line ar-maker">
+            <span class="ar-key">Creator:</span>
+            <img class="ar-makerImg" src="IMAGES/ali.png" alt="">
+            Ali
+          </p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span> 210</p>
+          <p class="ar-line"><span class="ar-key">Category:</span> Dinner</p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+
+</body>
+</html>
