@@ -7,9 +7,7 @@
 
 <style>
 /* ===== Namespace: ar- ===== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -44,10 +42,7 @@ body {
   letter-spacing: -0.5px;
 }
 
-.ar-filter {
-  display: flex;
-  gap: 10px;
-}
+.ar-filter { display: flex; gap: 10px; }
 
 #arCat {
   padding: 10px 16px;
@@ -59,11 +54,7 @@ body {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-#arCat:hover {
-  background: #f8f9fa;
-  transform: translateY(-1px);
-}
+#arCat:hover { background: #f8f9fa; transform: translateY(-1px); }
 
 #arGo {
   padding: 10px 20px;
@@ -76,55 +67,47 @@ body {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 #arGo:hover {
   background: #333;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
-#arGo:active {
-  transform: translateY(0);
-}
+#arGo:active { transform: translateY(0); }
 
 /* list */
 .ar-list {
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 70px 30px;
+  gap: 80px 30px;
 }
 
 @media (max-width: 900px) {
-  .ar-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .ar-list { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 560px) {
-  .ar-list {
-    grid-template-columns: 1fr;
-  }
+  .ar-list { grid-template-columns: 1fr; }
 }
 
 /* item */
 .ar-item {
   position: relative;
-  height: 240px;
+  height: 400px; 
   cursor: pointer;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.ar-item:hover {
-  z-index: 10;
-}
+.ar-item:hover { z-index: 10; }
 
 /* face */
 .ar-face {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 240px; 
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -143,6 +126,26 @@ body {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 }
 
+
+.ar-name {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: #111;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+
+.ar-item:hover .ar-name {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+
+
 /* pop - card style similar to reference */
 .ar-pop {
   position: absolute;
@@ -160,10 +163,7 @@ body {
 }
 
 /* hover behavior */
-.ar-item:hover .ar-face {
-  opacity: 0;
-}
-
+.ar-item:hover .ar-face { opacity: 0; }
 .ar-item:hover .ar-pop {
   opacity: 1;
   pointer-events: auto;
@@ -228,18 +228,10 @@ body {
   display: block;
   font-size: 18px;
 }
-
-.ar-popLink:hover {
-  opacity: 0.7;
-}
+.ar-popLink:hover { opacity: 0.7; }
 
 /* creator */
-.ar-maker {
-  display: block;
-  text-align: center;
-  font-size: 11px;
-}
-
+.ar-maker { display: block; text-align: center; font-size: 11px; }
 .ar-maker .ar-key {
   display: block;
   font-size: 11px;
@@ -256,17 +248,18 @@ body {
 }
 
 .ar-makerImg {
-  width: 35px;
-  height: 35px;
+  width: 45px;     
+  height: 45px;
   border-radius: 50%;
-  border: 0.5px solid #2d2d2d;
+  /*border: 0.2px solid #2d2d2d;*/
   object-fit: cover;
-  transition: transform 0.3s ease;
+
+  transition: none;
+  transform: none;
 }
 
-.ar-maker:hover .ar-makerImg {
-  transform: scale(1.1);
-}
+
+
 </style>
 </head>
 
@@ -293,6 +286,8 @@ body {
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Acai Bowl.png" alt="Acai Bowl">
       </div>
+      <h3 class="ar-name">Acai Bowl</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Acai Bowl.png" alt="">
@@ -318,6 +313,8 @@ body {
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Berry Yogurt .PNG" alt="Berry Yogurt">
       </div>
+      <h3 class="ar-name">Berry Yogurt</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Berry Yogurt .PNG" alt="">
@@ -343,6 +340,8 @@ body {
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Banana Granola.png" alt="Banana Granola">
       </div>
+      <h3 class="ar-name">Banana Granola</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Banana Granola.png" alt="">
@@ -368,6 +367,8 @@ body {
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Apple Muesli.png" alt="Apple Muesli">
       </div>
+      <h3 class="ar-name">Apple Muesli</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Apple Muesli.png" alt="">
@@ -388,11 +389,13 @@ body {
       </div>
     </article>
 
-    <!-- 5-->
+    <!-- 5 -->
     <article class="ar-item" data-cat="Breakfast">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Shakshuka.png" alt="Shakshuka">
       </div>
+      <h3 class="ar-name">Shakshuka</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Shakshuka.png" alt="">
@@ -418,6 +421,8 @@ body {
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Scrambled Eggs.png" alt="Scrambled Eggs">
       </div>
+      <h3 class="ar-name">Scrambled Eggs</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Scrambled Eggs.png" alt="">
@@ -438,13 +443,13 @@ body {
       </div>
     </article>
 
-     <!-- Lunch -->
-
     <!-- 7 -->
     <article class="ar-item" data-cat="Lunch">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Grilled Chicken Bowl .png" alt="Grilled Chicken Bowl">
       </div>
+      <h3 class="ar-name">Grilled Chicken Bowl</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Grilled Chicken Bowl .png" alt="">
@@ -470,6 +475,8 @@ body {
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Bibim.png" alt="Bibimbap">
       </div>
+      <h3 class="ar-name">Bibimbap</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Bibim.png" alt="">
@@ -493,33 +500,37 @@ body {
     <!-- 9 -->
     <article class="ar-item" data-cat="Lunch">
       <div class="ar-face">
-        <img class="ar-pic" src="../IMAGES/Kimchi Greens .png" alt="Kimchi Greens">
+        <img class="ar-pic" src="../IMAGES/Copy of Bowl & Balance.png" alt="Poke Bowl">
       </div>
+      <h3 class="ar-name">Poke Bowl</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
-          <img class="ar-popPic" src="../IMAGES/Kimchi Greens .png" alt="">
+          <img class="ar-popPic" src="../IMAGES/Copy of Bowl & Balance.png" alt="">
           <p class="ar-line">
             <span class="ar-key">Recipe name:</span>
-            <a class="ar-popLink" href="ViewRecipe.html">Kimchi Greens</a>
+            <a class="ar-popLink" href="ViewRecipe.html">Poke Bowl</a>
           </p>
           <div class="ar-line ar-maker">
             <span class="ar-key">Creator:</span>
             <div class="ar-makerContent">
-              <img class="ar-makerImg" src="../IMAGES/huda.jpg" alt="">
-              <span>Huda Ibrahim</span>
+              <img class="ar-makerImg" src="../IMAGES/Lina.jpg" alt="">
+              <span>Lina Mahmoud</span>
             </div>
           </div>
-          <p class="ar-line"><span class="ar-key">Total likes:</span><span class="ar-value">142</span></p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span><span class="ar-value">254</span></p>
           <p class="ar-line"><span class="ar-key">Category:</span><span class="ar-value">Lunch</span></p>
         </div>
       </div>
     </article>
-    
+
     <!-- 10 -->
     <article class="ar-item" data-cat="Lunch">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Shrimp Noodles .png" alt="Shrimp Noodles">
       </div>
+      <h3 class="ar-name">Shrimp Noodles</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Shrimp Noodles .png" alt="">
@@ -545,6 +556,8 @@ body {
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Carbonara .png" alt="Carbonara">
       </div>
+      <h3 class="ar-name">Carbonara</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Carbonara .png" alt="">
@@ -563,13 +576,15 @@ body {
           <p class="ar-line"><span class="ar-key">Category:</span><span class="ar-value">Lunch</span></p>
         </div>
       </div>
-    </article> 
+    </article>
 
     <!-- 12 -->
     <article class="ar-item" data-cat="Lunch">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Salmon Bowl.png" alt="Salmon Bowl">
       </div>
+      <h3 class="ar-name">Salmon Bowl</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Salmon Bowl.png" alt="">
@@ -590,13 +605,13 @@ body {
       </div>
     </article>
 
-     <!-- Dinner-->
-
     <!-- 13 -->
     <article class="ar-item" data-cat="Dinner">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Chicken Stir-Fry .png" alt="Chicken Stir-Fry">
       </div>
+      <h3 class="ar-name">Chicken Stir-Fry</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Chicken Stir-Fry .png" alt="">
@@ -616,11 +631,14 @@ body {
         </div>
       </div>
     </article>
+
     <!-- 14 -->
     <article class="ar-item" data-cat="Dinner">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Butter Chicken .png" alt="Butter Chicken">
       </div>
+      <h3 class="ar-name">Butter Chicken</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Butter Chicken .png" alt="">
@@ -640,11 +658,14 @@ body {
         </div>
       </div>
     </article>
+
     <!-- 15 -->
     <article class="ar-item" data-cat="Dinner">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Chicken Curry .png" alt="Chicken Curry">
       </div>
+      <h3 class="ar-name">Chicken Curry</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Chicken Curry .png" alt="">
@@ -664,11 +685,14 @@ body {
         </div>
       </div>
     </article>
+
     <!-- 16 -->
     <article class="ar-item" data-cat="Dinner">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Kung Pao Chicken .png" alt="Kung Pao Chicken">
       </div>
+      <h3 class="ar-name">Kung Pao Chicken</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Kung Pao Chicken .png" alt="">
@@ -688,11 +712,14 @@ body {
         </div>
       </div>
     </article>
+
     <!-- 17 -->
     <article class="ar-item" data-cat="Dinner">
       <div class="ar-face">
         <img class="ar-pic" src="../IMAGES/Pasta Bolognese .png" alt="Pasta Bolognese">
       </div>
+      <h3 class="ar-name">Pasta Bolognese</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
           <img class="ar-popPic" src="../IMAGES/Pasta Bolognese .png" alt="">
@@ -712,35 +739,38 @@ body {
         </div>
       </div>
     </article>
+
     <!-- 18 -->
-    <article class="ar-item" data-cat="Dinner">
+
+
+     <article class="ar-item" data-cat="Dinner">
       <div class="ar-face">
-        <img class="ar-pic" src="../IMAGES/Copy of Bowl & Balance.png" alt="Poke Bowl">
+        <img class="ar-pic" src="../IMAGES/Kimchi Greens .png" alt="Kimchi Greens">
       </div>
+      <h3 class="ar-name">Kimchi Greens</h3>
+
       <div class="ar-pop">
         <div class="ar-popIn">
-          <img class="ar-popPic" src="../IMAGES/Copy of Bowl & Balance.png" alt="">
+          <img class="ar-popPic" src="../IMAGES/Kimchi Greens .png" alt="">
           <p class="ar-line">
             <span class="ar-key">Recipe name:</span>
-            <a class="ar-popLink" href="ViewRecipe.html">Poke Bowl</a>
+            <a class="ar-popLink" href="ViewRecipe.html">Kimchi Greens</a>
           </p>
           <div class="ar-line ar-maker">
             <span class="ar-key">Creator:</span>
             <div class="ar-makerContent">
-              <img class="ar-makerImg" src="../IMAGES/Lina.jpg" alt="">
-              <span>Lina Mahmoud</span>
+              <img class="ar-makerImg" src="../IMAGES/huda.jpg" alt="">
+              <span>Huda Ibrahim</span>
             </div>
           </div>
-          <p class="ar-line"><span class="ar-key">Total likes:</span> 254</p>
-          <p class="ar-line"><span class="ar-key">Category:</span> Dinner</p>
+          <p class="ar-line"><span class="ar-key">Total likes:</span><span class="ar-value">142</span></p>
+          <p class="ar-line"><span class="ar-key">Category:</span><span class="ar-value">Dinner</span></p>
         </div>
       </div>
     </article>
 
   </section>
 </main>
-
 </body>
-
-
 </html>
+
