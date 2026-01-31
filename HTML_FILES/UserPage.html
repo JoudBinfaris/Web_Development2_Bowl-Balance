@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Bowl & Balance</title>
+    <link rel="stylesheet" href="../Style.css">
+    <style>
+        /* ===== USER PAGE ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+            color: #3d3028;
+            min-height: 100vh;
+        }
+
+        /* Main container */
+        .user-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Welcome section */
+        .welcome-section {
+            margin-bottom: 35px;
+        }
+
+        .welcome-note {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #3d3028;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        /* Profile info section */
+        .profile-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 22px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #3d3028;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 7px;
+            height: 28px;
+            background: #8b6f4e;
+            border-radius: 4px;
+        }
+
+        /* Profile grid */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .profile-photo {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.13);
+            transition: all 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.02);
+        }
+
+        /* Profile details */
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 18px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .detail-item:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .detail-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #8b6f4e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 7px;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #3d3028;
+        }
+
+        /* Recipe Stats Section */
+        .up-stats {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 22px;
+            padding: 35px;
+            margin-bottom: 35px;
+            margin-top: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 20px;
+        }
+
+        .up-stat-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .up-stat-card:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 22px rgba(0, 0, 0, 0.09);
+        }
+
+        .up-stat-icon {
+            font-size: 44px;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(139, 111, 78, 0.15);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .up-stat-icon img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .up-stat-card:hover .up-stat-icon {
+            background: rgba(139, 111, 78, 0.25);
+            transform: scale(1.05);
+        }
+
+        .up-stat-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .up-stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #8b6f4e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .up-stat-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #3d3028;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .up-stat-link {
+            padding: 9px 18px;
+            background: rgba(139, 111, 78, 0.9);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 11px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .up-stat-link:hover {
+            background: rgba(139, 111, 78, 1);
+            transform: translateY(-2px);
+        }
+
+        .my-recipes {
+            color: #3d3028;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .my-recipes:hover {
+            color: #8b6f4e;
+            text-decoration: underline;
+        }
+
+        /* Favorites section */
+        .favorites-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 22px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .favorites-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .favorites-table th {
+            background: rgba(139, 111, 78, 0.9);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .favorites-table td {
+            padding: 18px;
+            border-bottom: 1px solid rgba(61, 48, 40, 0.1);
+        }
+
+        .favorites-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .favorites-table tr:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .recipe-name-link {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #3d3028;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .recipe-name-link:hover {
+            color: #8b6f4e;
+            text-decoration: underline;
+        }
+
+        .recipe-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2.5px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .remove-link {
+            padding: 9px 18px;
+            background: rgba(236, 135, 135, 0.9);
+            color: darkred;
+            text-decoration: none;
+            border-radius: 11px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .remove-link:hover {
+            background: rgb(210, 105, 105);
+            transform: translateY(-2px);
+        }
+
+        /* Sign out section */
+        .signout-section {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .signout-link {
+            display: inline-block;
+            padding: 14px 36px;
+            background: rgba(61, 48, 40, 0.9);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .signout-link:hover {
+            background: rgba(61, 48, 40, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 22px rgba(0, 0, 0, 0.17);
+        }
+                
+
+            
+       /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .user-container {
+                padding: 20px 10px;
+            }
+
+            /* Welcome section */
+            .welcome-note {
+                font-size: 2rem;
+            }
+
+            /* Profile section */
+            .profile-section {
+                padding: 30px 20px;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .profile-photo {
+                margin: 0 auto;
+                width: 150px;
+                height: 150px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                justify-content: center;
+            }
+
+            .section-title::before {
+                height: 24px;
+            }
+
+            /* Stats section */
+            .up-stats {
+                padding: 30px 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .up-stat-card {
+                padding: 24px;
+            }
+
+            .up-stat-number {
+                font-size: 2rem;
+            }
+
+            .up-stat-link {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+
+            /* Favorites section */
+            .favorites-section {
+                padding: 30px 20px;
+            }
+
+            .favorites-table {
+                display: block;
+                overflow-x: auto;
+                font-size: 0.9rem;
+            }
+
+            .favorites-table thead {
+                display: none;
+            }
+
+            .favorites-table tbody,
+            .favorites-table tr,
+            .favorites-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .favorites-table tr {
+                margin-bottom: 20px;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.6);
+                border-radius: 16px;
+            }
+
+            .favorites-table td {
+                padding: 10px 0;
+                border: none !important;
+                text-align: center;
+            }
+
+            .favorites-table td::before {
+                content: attr(data-label);
+                font-weight: 700;
+                color: #8b6f4e;
+                display: block;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+            }
+
+            .recipe-name-link {
+                font-size: 1.1rem;
+            }
+
+            .recipe-photo {
+                margin: 10px auto;
+            }
+
+            .remove-link {
+                display: block;
+                max-width: 200px;
+                margin: 10px auto 0;
+            }
+
+            /* Sign out */
+            .signout-section {
+                margin-top: 30px;
+            }
+
+            .signout-link {
+                font-size: 1rem;
+                padding: 14px 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-note {
+                font-size: 1.8rem;
+                letter-spacing: -1px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .detail-item {
+                padding: 15px;
+            }
+
+            .detail-value {
+                font-size: 1rem;
+            }
+
+            .up-stat-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .up-stat-icon img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .up-stat-number {
+                font-size: 1.8rem;
+            }
+
+            .recipe-name-link {
+                font-size: 1rem;
+            }
+
+            .recipe-photo {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="../IMAGES/logo.png" alt="Bowl & Balance Logo" class="logo-img">
+                <span class="logo-text">Bowl & Balance</span>
+            </div>
+            <div class="header-right">
+                <nav class="header-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="AllRecipes.html" class="nav-link">Recipes</a>
+                    <a href="MyRecipes.html" class="nav-link">My Recipes</a>
+                </nav>
+                <a href="index.html" class="header-signout">Sign Out</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="user-container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h1 class="welcome-note">Hey there, Sarah!</h1>
+            <!-- <p style="font-size: 1.2rem; color: #666; max-width: 800px;">
+                Here's your personalized dashboard with all your recipes, favorites, and profile information.
+            </p> -->
+        </section>
+
+        <!-- Profile Information Section -->
+        <section class="profile-section">
+        <h2 class="section-title">Profile Information</h2>
+        <div class="profile-grid">
+            <!-- Profile Picture -->
+            <img src="../IMAGES/Sara.jpg" alt="profile picture" class="profile-photo">
+            
+            <!-- Profile Details -->
+            <div class="profile-details">
+                <!-- 1. Name -->
+                <div class="detail-item">
+                    <div class="detail-label">Full Name</div>
+                    <div class="detail-value">Sarah Mohammed</div>
+                </div>
+                
+                <!-- 2. Email Address -->
+                <div class="detail-item">
+                    <div class="detail-label">Email Address</div>
+                    <div class="detail-value">sarah.mohammed@example.com</div>
+                </div>
+                
+                <!-- 3. Member Since -->
+                <div class="detail-item">
+                    <div class="detail-label">Member Since</div>
+                    <div class="detail-value">March 15, 2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- My Recipes Section -->
+        <section class="up-stats">
+            <h2 class="section-title"><a href="MyRecipes.html" class="my-recipes">My Recipes</a></h2>
+            <div class="stats-grid">
+                <div class="up-stat-card">
+                    <div class="up-stat-icon"><img src="../IMAGES/book.png" alt=""></div>
+                    <div class="up-stat-content">
+                        <span class="up-stat-label">My Recipes</span>
+                        <span class="up-stat-number">12</span>
+                    </div>
+                    <a href="MyRecipes.html" class="up-stat-link">View All</a>
+                </div>
+                <div class="up-stat-card">
+                    <div class="up-stat-icon"><img src="../IMAGES/heart.png" alt=""></div>
+                    <div class="up-stat-content">
+                        <span class="up-stat-label">Total Likes</span>
+                        <span class="up-stat-number">347</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section class="favorites-section">
+            <h2 class="section-title">My Favorite Recipes</h2>
+            <table class="favorites-table">
+                <thead>
+                    <tr>
+                        <th>Recipe Name</th>
+                        <th>Photo</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="ViewRecipe.html" class="recipe-name-link">Acai Bowl</a>
+                            <div style="font-size: 0.9rem; color: #8b6f4e; margin-top: 5px;">Breakfast • 150 likes</div>
+                        </td>
+                        <td>
+                            <img src="../IMAGES/Acai Bowl_3.png" alt="Acai Bowl" class="recipe-photo">
+                        </td>
+                        <td>
+                            <a href="#" class="remove-link">Remove from Favorites</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="ViewRecipe.html" class="recipe-name-link">Berry Yogurt</a>
+                            <div style="font-size: 0.9rem; color: #8b6f4e; margin-top: 5px;">Breakfast • 120 likes</div>
+                        </td>
+                        <td>
+                            <img src="../IMAGES/Berry Yogurt .PNG" alt="Berry Yogurt" class="recipe-photo">
+                        </td>
+                        <td>
+                            <a href="#" class="remove-link">Remove from Favorites</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="ViewRecipe.html" class="recipe-name-link">Grilled Chicken Bowl</a>
+                            <div style="font-size: 0.9rem; color: #8b6f4e; margin-top: 5px;">Lunch • 198 likes</div>
+                        </td>
+                        <td>
+                            <img src="../IMAGES/Grilled Chicken Bowl .png" alt="Grilled Chicken Bowl" class="recipe-photo">
+                        </td>
+                        <td>
+                            <a href="#" class="remove-link">Remove from Favorites</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="ViewRecipe.html" class="recipe-name-link">Butter Chicken</a>
+                            <div style="font-size: 0.9rem; color: #8b6f4e; margin-top: 5px;">Dinner • 294 likes</div>
+                        </td>
+                        <td>
+                            <img src="../IMAGES/Butter Chicken .png" alt="Butter Chicken" class="recipe-photo">
+                        </td>
+                        <td>
+                            <a href="#" class="remove-link">Remove from Favorites</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sign Out Section -->
+        <div class="signout-section">
+            <a href="index.html" class="signout-link">Sign Out</a>
+        </div>
+        
+    </div>
+
+
+   <!-- Footer -->
+ <footer class="page-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mailto:contact@bowlandbalance.com" class="footer-link">
+                    <span class="footer-icon">📧</span>
+                    contact@bowlandbalance.com
+                </a>
+                <a href="tel:+966501234567" class="footer-link">
+                    <span class="footer-icon">📞</span>
+                    +966 50 123 4567
+                </a>
+                <a href="https://x.com/bowlandbalance" target="_blank" class="footer-link">
+                    <span class="footer-icon">𝕏</span>
+                    @bowlandbalance
+                </a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Bowl & Balance. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
