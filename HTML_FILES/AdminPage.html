@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Bowl & Balance</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            /* Red for alerts/reports */
+            --success-color: #27ae60;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header & Logout */
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .logout-btn {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+            border: 1px solid var(--accent-color);
+            padding: 5px 15px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Info Section */
+        .info-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        /* Moderation Feed Styling */
+        .feed-item {
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--accent-color);
+            /* Highlights it's a report */
+        }
+
+        .recipe-link {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .creator-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        /* Action Form in Feed */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Table Styling for Blocked Users */
+        .modern-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modern-table th,
+        .modern-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modern-table th {
+            background-color: #ecf0f1;
+            color: var(--primary-color);
+        }
+
+        /* =========================================
+              RESPONSIVE MEDIA QUERIES (CENTERED)
+           ========================================= */
+
+        @media (max-width: 768px) {
+
+            .feed-item {
+                flex-direction: column;
+                align-items: center;
+                /* Centers items horizontally in the flex container */
+                text-align: center;
+                /* Centers the text inside elements */
+                padding: 25px 15px;
+            }
+
+            .recipe-details,
+            .creator-info,
+            .action-form {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 25px;
+                /* Added more breathing room between sections */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* Ensures inner items (like the avatar) center */
+            }
+
+            .action-form {
+                margin-bottom: 0;
+                background: #fdfdfd;
+                /* Lightening the form background slightly for mobile focus */
+            }
+
+            .radio-group {
+                align-items: flex-start;
+                /* Keep radio buttons left-aligned to each other... */
+                display: inline-flex;
+                /* ...but center the whole group as a block */
+                text-align: left;
+                margin-bottom: 15px;
+            }
+
+            .submit-btn {
+                max-width: 200px;
+                /* Prevents the button from being giant on wide phones */
+            }
+
+            admin-header h1 {
+                font-size: 1.1rem;
+                /* Shrink text slightly so it fits on one line */
+                text-align: left;
+            }
+
+            .logout-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+                white-space: nowrap;
+                /* Prevents "Log-out" from breaking into two lines */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <h1>Welcome, [Admin Name]</h1>
+        <a href="index.html" class="logout-btn">Log-out</a>
+    </header>
+
+    <main class="container">
+        <section class="admin-info">
+            <h2>My Information</h2>
+            <div class="info-card">
+                <p><strong>Name:</strong> [Admin Full Name]</p>
+                <p><strong>Email:</strong> admin@riwaq.com</p>
+            </div>
+        </section>
+
+        <section class="moderation-feed">
+            <h2>Pending Recipe Reports</h2>
+
+            <div class="feed-item">
+                <div class="recipe-details">
+                    <a href="view-recipe.html" class="recipe-link">Low-Carb Strawberry Cheesecake</a>
+
+                </div>
+
+                <div class="creator-info">
+                    <img src="IMAGES/profile.png" alt="Creator Photo" class="avatar">
+                    <span>By: <strong>[Creator Name]</strong></span>
+                </div>
+
+                <form action="" class="action-form">
+                    <div class="radio-group">
+                        <label><input type="radio" name="action" checked> Block User</label>
+                        <label><input type="radio" name="action"> Dismiss</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Action</button>
+                </form>
+            </div>
+
+            <div class="feed-item">
+                <div class="recipe-details">
+                    <a href="view-recipe.html" class="recipe-link">Low-Carb Strawberry Cheesecake</a>
+
+                </div>
+
+                <div class="creator-info">
+                    <img src="IMAGES/profile.png" alt="Creator Photo" class="avatar">
+                    <span>By: <strong>[Creator Name]</strong></span>
+                </div>
+
+                <form action="" class="action-form">
+                    <div class="radio-group">
+                        <label><input type="radio" name="action" checked> Block User</label>
+                        <label><input type="radio" name="action"> Dismiss</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Action</button>
+                </form>
+            </div>
+            <div class="feed-item">
+                <div class="recipe-details">
+                    <a href="view-recipe.html" class="recipe-link">Low-Carb Strawberry Cheesecake</a>
+
+                </div>
+
+                <div class="creator-info">
+                    <img src="IMAGES/profile.png" alt="Creator Photo" class="avatar">
+                    <span>By: <strong>[Creator Name]</strong></span>
+                </div>
+
+                <form action="" class="action-form">
+                    <div class="radio-group">
+                        <label><input type="radio" name="action" checked> Block User</label>
+                        <label><input type="radio" name="action"> Dismiss</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Action</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="blocked-list">
+            <h2>Blocked Users List</h2>
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[User Name]</td>
+                        <td>user@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>[User Name]</td>
+                        <td>user@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>[User Name]</td>
+                        <td>user@email.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+
+</html>
