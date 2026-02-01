@@ -1999,23 +1999,23 @@ body {
 }
 
 .moderation-feed h2 {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: #3d3028;
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+     font-size: 1.7rem;
+            font-weight: 800;
+            color: #3d3028;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
 }
 
 .moderation-feed h2::before {
-    content: '';
-    display: block;
-    width: 7px;
-    height: 28px;
-    background: #8b6f4e;
-    border-radius: 4px;
-}
+            content: '';
+            display: block;
+            width: 7px;
+            height: 28px;
+            background: #8b6f4e;
+            border-radius: 4px;
+        }
 
 /* Moderation Feed Styling */
 .feed-item {
@@ -2061,7 +2061,7 @@ body {
 }
 
 .submit-btn {
-    background: var(--primary-color);
+    background: red;
     color: white;
     border: none;
     padding: 8px 12px;
