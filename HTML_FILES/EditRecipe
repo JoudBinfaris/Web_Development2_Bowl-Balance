@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+     <title>Update Recipe</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="Style.css">
+    </head>
+
+
+
+    <body>
+        <main class="bd-page1">
+        <h1 id="bd-first-heading">Update Recipe</h1>
+        <h3 id="bd-second-heading">Update your recipe and add your personal touches</h3>
+
+        <form id="bd-addRecipeForm" method="get" action="AddNewRecipie.html">
+        <div id="bd-container1-div">
+            <label>Recipe Name:</label>
+            <input type="text" id="bd-name" name="name" placeholder="input recipe name" value="Berry Yogurt">
+    
+            <label>Category:</label>
+            <select id="bd-category" name="bd-category">
+                <option selected>BreakFast</option>
+                <option >Lunch</option>
+                <option>Dinner</option>
+            </select>
+        </div>
+        
+        <div id="bd-description-div">
+            <label>Description:</label>
+            <textarea id="bd-description" rows="2" cols="60">Berry Yogurt Bowl is a refreshing and nutritious blend of creamy yogurt topped with fresh mixed berries. It combines the natural sweetness of strawberries, blueberries, and raspberries with smooth, protein-rich yogurt to create a light yet satisfying meal. This bowl is perfect for breakfast or a healthy snack, offering a balance of flavor, texture, and energy in every bite.</textarea>
+        </div>
+
+<div id="bd-container3-div">
+       <div id="upload-recipe-pic">
+        <label>Upload photo:</label>
+        <input type="file" name="upload-recipe-pic">
+        <img src="IMAGES/Berry Yogurt .png" width="200">
+
+       </div>
+
+       <div id="bd-ingrediants-div">
+  <label>Ingredients:</label>
+
+  <div id="ingredients-list">
+    <!-- هنا بتنضاف الخانات -->
+  </div>
+
+  <button type="button" id="bd-addIngre-btn" class="addRecipe-btn">
+    Add Another
+  </button>
+</div>
+
+
+<div id="bd-instructions-div">
+
+  <label>Instructions:</label>
+
+  <div id="steps-list">
+    <!-- هنا تنضاف الخطوات -->
+  </div>
+
+  <button type="button" id="bd-addStep-btn" class="addStep-btn">
+    Add More Step
+  </button>
+
+</div>
+
+
+       <div id="bd-uploadVid-div">
+        <label> Upload video:</label>
+         <input type="file" name="bd-uploadVid-div">
+         <label>Video URL:</label>
+         <textarea  rows="2" cols="60"></textarea>
+       </div> 
+</div>
+       <button id="bd-updateRecipe-btn" class="updateRecipe-btn">Update Recipe</button>
+       </form>
+
+    </main>
+
+
+<script src="JavaScriptFile.js"></script>
+
+    </body>
+
+
+</html>
