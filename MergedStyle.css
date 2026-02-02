@@ -257,9 +257,9 @@ div.container {
 
 #ar-body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-image: url(IMAGES/bulrr12.png);
+  background-image: url(IMAGES/blurr16.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   /*background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);*/
   color: #3d3028;
   min-height: 100vh;
@@ -1550,11 +1550,11 @@ label {
 }
 
 /* ===== USER PAGE ===== */
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+}*/
 
 body {
     font-family: 'Inter', system-ui, sans-serif;
