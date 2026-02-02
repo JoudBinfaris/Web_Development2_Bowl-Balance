@@ -145,7 +145,8 @@ div.container {
     margin-left: 1rem;
 }
 
-#indent, #indent2{
+#indent,
+#indent2 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 2rem;
@@ -154,94 +155,99 @@ div.container {
 /* =========================
    Phone responsive rules
    ========================= */
-   @media (max-width: 600px) {
+@media (max-width: 600px) {
 
     /* Background + page spacing */
     #bg {
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
-  
+
 
     #Sheet {
-      width: auto;
-      margin: 1rem;
-      padding: 1.25rem 1rem;
-      padding-bottom: 3rem; /* remove the huge bottom space on mobile */
-      border-radius: 1.25rem;
+        width: auto;
+        margin: 1rem;
+        padding: 1.25rem 1rem;
+        padding-bottom: 3rem;
+        /* remove the huge bottom space on mobile */
+        border-radius: 1.25rem;
     }
-  
+
     div.container {
-      margin: 0;
+        margin: 0;
     }
-  
+
     /* Stack rows instead of forcing side-by-side */
     .flexRow {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
     }
-  
+
     /* Title smaller on phone */
     .rname {
-      font-size: 2.2rem;
-      line-height: 1.1;
-      margin: 0;
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin: 0;
     }
-  
+
     /* Bowl image should not overflow */
     #bowlImg {
-      width: 10rem;
+        width: 10rem;
 
-      height: auto;
+        height: auto;
     }
-  
+
     /* Description text slightly smaller */
     .rdescription {
-      font-size: 1.05rem;
+        font-size: 1.05rem;
     }
-  
+
     /* Buttons: remove huge margin-left and make them wrap nicely */
-    #like, #fav, #report {
-      margin-left: 0;
-      width: 100%;
-      text-align: center;
+    #like,
+    #fav,
+    #report {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
     }
-  
+
     /* Comment input + post button full width */
     #comment {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0.6rem 0.8rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.6rem 0.8rem;
     }
-  
+
     #post {
-      width: 100%;
-      margin-top: 0.5rem;
-      text-align: center;
+        width: 100%;
+        margin-top: 0.5rem;
+        text-align: center;
     }
-  
+
     /* Comments layout */
     .profile {
-      width: 3rem;
+        width: 3rem;
     }
-  
+
     #comments .flexRow {
-      flex-direction: row;     /* keep avatar + text side-by-side */
-      align-items: center;
-      gap: 0.75rem;
+        flex-direction: row;
+        /* keep avatar + text side-by-side */
+        align-items: center;
+        gap: 0.75rem;
     }
-  
+
     #comments p {
-      margin-left: 0;
+        margin-left: 0;
     }
-  
+
     /* Indents smaller on phone */
-    #indent, #indent2 {
-      margin-left: 1.2rem;
+    #indent,
+    #indent2 {
+        margin-left: 1.2rem;
     }
-  }
+}
 
 
 
@@ -2078,21 +2084,8 @@ body {
 /* -------------------------------------------------------Admin page-------------------------------------*/
 
 
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.moderation-feed {
+.moderation-feed,
+.blocked-list {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     border-radius: 22px;
@@ -2102,28 +2095,30 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
 }
 
-.moderation-feed h2 {
-     font-size: 1.7rem;
-            font-weight: 800;
-            color: #3d3028;
-            margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+.moderation-feed h2,
+.blocked-list h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #3d3028;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.moderation-feed h2::before {
-            content: '';
-            display: block;
-            width: 7px;
-            height: 28px;
-            background: #8b6f4e;
-            border-radius: 4px;
-        }
+.moderation-feed h2::before,
+.blocked-list h2::before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 28px;
+    background: #8b6f4e;
+    border-radius: 4px;
+}
 
 /* Moderation Feed Styling */
 .feed-item {
-    background: white;
+    background: rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2131,8 +2126,15 @@ body {
     margin-bottom: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid var(--accent-color);
+    border-left: 5px solid rgb(178, 17, 17);
+    transition: all 0.3s ease;
     /* Highlights it's a report */
+
+}
+
+.feed-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
 }
 
 .recipe-link {
@@ -2176,23 +2178,26 @@ body {
 /* Table Styling for Blocked Users */
 .modern-table {
     width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
+    border-collapse: separate;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-spacing: 0;
+    margin-top: 20px;
 }
 
-.modern-table th,
 .modern-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
+            padding: 18px;
+            border-bottom: 1px solid rgba(61, 48, 40, 0.1);
+        }
 
 .modern-table th {
-    background-color: #ecf0f1;
-    color: var(--primary-color);
+    background: rgba(139, 111, 78, 0.9);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 /* =========================================
@@ -2225,7 +2230,6 @@ body {
 
     .action-form {
         margin-bottom: 0;
-        background: #fdfdfd;
         /* Lightening the form background slightly for mobile focus */
     }
 
@@ -2241,18 +2245,5 @@ body {
     .submit-btn {
         max-width: 200px;
         /* Prevents the button from being giant on wide phones */
-    }
-
-    admin-header h1 {
-        font-size: 1.1rem;
-        /* Shrink text slightly so it fits on one line */
-        text-align: left;
-    }
-
-    .logout-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        /* Prevents "Log-out" from breaking into two lines */
     }
 }
