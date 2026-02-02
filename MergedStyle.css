@@ -791,255 +791,479 @@ div.container {
 
 
 
-
-
-
-
-
-
-/* the main page  */
-.bd-page1 {
-    background-color: rgba(255, 255, 255, 0.4);
-
-    width: 100%;
-    margin: 5% auto;
-
-    padding: 30px;
-    padding-bottom: 120px;
-
-    border-radius: 2rem;
-    font-family: system-ui, Arial, sans-serif;
+/* the body*/
+#bd-body-EditRecipe,
+#bd-body-AddRecipe {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+  color: #3d3028;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-/* the headings */
+/* the main */
+#bd-page1 {
+  background-color: rgba(255, 255, 255, 0.4);
+
+  /* Make it centered and not too wide */
+  max-width: 1100px;
+  width: 92%;
+
+  margin: 50px auto;      /* center */
+  padding: 30px;          /* inner spacing */
+  padding-bottom: 80px;
+
+  border-radius: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* headings*/
 #bd-first-heading {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 #bd-second-heading {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #5e5757;
+  text-align: center;
+  margin-bottom: 35px;
+  color: #5e5757;
 }
 
-/*for the spaces between all div inside the form */
+/* to add space for the form */
 #bd-addRecipeForm div {
-    margin: 25px 0;
+  margin: 22px 0;
 }
 
-/* labels*/
+/* Labels */
 label {
-    font-weight: bold;
-    color: #222;
-    font-size: 15px;
+  font-weight: bold;
+  color: #222;
+  font-size: 15px;
 }
 
-/*which is the recipe name and category*/
+/* the name and category fields */
 #bd-container1-div {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  
+  flex-wrap: wrap;
 }
 
-
-
-/* name field */
+/* Name input */
 #bd-name {
-    width: 45%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
+  flex: 1;
+  min-width: 260px;
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-/* category field */
+/* Category select */
 #bd-category {
-    width: 20%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
+  width: 200px;
+  max-width: 100%;
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-/*discription field */
+/* discription */
 #bd-description-div {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
 }
 
-/* the textarea box*/
 #bd-description-div textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
+  width: 100%;
+  padding: 12px;
 
+  border: 1px solid #ccc;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+
+  resize: vertical;
 }
 
-/* container3  */
+/* third container(for photo , vid ,etc)*/
 #bd-container3-div {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-/* upload photo field*/
-#upload-recipe-pic {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
-}
-
-/* ingrediants field  */
-#bd-ingrediants-div {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
-
-}
-
-/*ingrediants list field*/
-#ingredients-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-}
-
-/* كل سطر ingredient */
-.ingredient-row {
-    /*it is added in javascript*/
-    display: flex;
-    /* so that when name and quantity added the become in row by default */
-    gap: 15px;
-}
-
-/* ingredients input fields */
-.ingredient-row input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-
-
-/* instructions field */
-#bd-instructions-div {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
-
-    min-height: 120px;
-}
-
-/* steps fields -- added in java script */
-#steps-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-}
-
-.step-row textarea {
-    width: 100%;
-    min-height: 60px;
-
-    padding: 10px;
-
-    border: 1px solid #ccc;
-    border-radius: 10px;
-
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-
-}
-
-/*upload video field */
-#bd-uploadVid-div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
-}
-
-#bd-uploadVid-div textarea {
-    width: 50%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 #bd-container3-div label {
-    white-space: nowrap;
-    font-weight: bold;
+  white-space: nowrap;
+  font-weight: bold;
 }
 
+/* Upload photo */
+#upload-recipe-pic {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
 
-/* all add buttons  */
+  flex-wrap: wrap;
+}
+
+/* Ingredients box */
+#bd-ingrediants-div {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  flex-wrap: wrap;
+}
+
+#ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.ingredient-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.ingredient-row input {
+  flex: 1;
+  min-width: 200px;
+
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Instructions box */
+#bd-instructions-div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  min-height: 120px;
+}
+
+#steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.step-row textarea {
+  width: 100%;
+  min-height: 60px;
+
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+
+  resize: vertical;
+}
+
+/* Upload video box */
+#bd-uploadVid-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  flex-wrap: wrap;
+}
+
+#bd-uploadVid-div textarea {
+  width: 50%;
+  min-width: 260px;
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* to unify the buttons */
 .addRecipe-btn,
 .updateRecipe-btn,
 .addStep-btn {
-    display: block;
-    width: 180px;
-    padding: 12px 0;
-    margin: 20px auto;
 
-    border: none;
-    border-radius: 14px;
+  display: block;
+  width: 190px;
 
-    background: black;
-    color: white;
+  padding: 12px 0;
+  margin: 22px auto;
 
-    font-size: 15px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
+  border: none;
+  border-radius: 14px;
 
-    transition: all 0.3s ease;
+  background: rgba(139, 111, 78, 0.9);
+  color: white;
+
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
 }
 
-.addRecipe-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.addRecipe-btn:hover,
+.updateRecipe-btn:hover,
+.addStep-btn:hover {
+  background: rgba(139, 111, 78, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px
 }
 
-.addRecipe-btn:active {
-    transform: translateY(0);
-    box-shadow: none;
+
+
+
+
+
+/* =========================================
+   RESPONSIVE ONLY (add at the very end)
+   No global reset, no body changes
+   ========================================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  #bd-page1 {
+    width: 94%;
+    margin: 28px auto;
+    padding: 22px;
+    padding-bottom: 60px;
+  }
+
+  /* Video textarea becomes full width */
+  #bd-uploadVid-div textarea {
+    width: 100%;
+    min-width: 0;
+  }
 }
+
+/* Mobile */
+@media (max-width: 600px) {
+  #bd-page1 {
+    width: 94%;
+    margin: 18px auto;
+    padding: 16px;
+    padding-bottom: 45px;
+  }
+
+  /* Name + category stack vertically */
+  #bd-container1-div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #bd-name,
+  #bd-category {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Description stack */
+  #bd-description-div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #bd-description-div textarea {
+    width: 100%;
+  }
+
+  /* Ingredients rows stack */
+  .ingredient-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ingredient-row input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Upload sections stack */
+  #upload-recipe-pic,
+  #bd-ingrediants-div,
+  #bd-uploadVid-div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Buttons look nicer on mobile */
+  .addRecipe-btn,
+  .updateRecipe-btn,
+  .addStep-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*----------------------------------------------My Recipe page----------------------------------------------*/
+
+
+
+
+
+/* responsive of the page */
+
+/* Tablet */
+@media (max-width: 900px) {
+
+  /* Table becomes wider */
+  #bd-page2 table {
+    width: 95%;
+  }
+
+  /* Button aligns better */
+  #bd-addRecipe-link-btn {
+    margin-right: 5%;
+  }
+
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  /* Page padding */
+  #bd-page2 {
+    padding: 15px 0;
+  }
+
+  /* Table wrapper scroll */
+  #bd-page2 {
+    overflow-x: auto;
+  }
+
+  /* Table keeps min width */
+  #bd-page2 table {
+    width: 100%;
+    min-width: 650px;
+    margin-bottom: 30px;
+  }
+
+  /* Smaller cells */
+  #bd-page2 td,
+  #bd-page2 thead td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  /* Images smaller */
+  #bd-page2 td:first-child img {
+    width: 55px;
+    height: 55px;
+  }
+
+  /* Stack image + name tighter */
+  #bd-page2 td:first-child {
+    gap: 4px;
+  }
+
+  /* Button full width */
+  #bd-addRecipe-link-btn {
+    width: 90%;
+    text-align: center;
+
+    margin: 0 auto 15px;
+  }
+
+}
+
+
+/* Extra small phones */
+@media (max-width: 400px) {
+
+  #bd-page2 table {
+    min-width: 580px;
+  }
+
+  #bd-third-heading {
+    font-size: 1.1rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#bd-bodyMyRecipe{
+      font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+    color: #3d3028;
+    min-height: 100vh;
+    margin: auto;
+}
+
+
+
 /* صفحة My Recipes */
 #bd-page2 {
     background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
@@ -1055,6 +1279,8 @@ label {
     color: #3d3028;
 
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+     margin: 0;
+  padding: 0; 
 }
 
 
@@ -1068,7 +1294,12 @@ label {
 
 /* زر Add Recipe */
 #bd-addRecipe-link-btn {
-    float: right;
+    float: none;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 10%;
+  margin-bottom: 20px;
 
     padding: 10px 18px;
 
@@ -1085,23 +1316,17 @@ label {
 }
 
 
-/* تصحيح float */
-#bd-page2::after {
-    content: "";
-    display: block;
-    clear: both;
-}
 
 
 /* الجدول */
 #bd-page2 table {
-    width: 100%;
+    width: 80%;
 
     background: rgba(255, 255, 255, 0.85);
 
     border: none;
     border-radius: 30px;
-
+  margin: 0 auto 40px;  
     overflow: hidden;
 
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
@@ -1232,6 +1457,11 @@ label {
 
 #auth-body {
     background-image: url(IMAGES/bg.png);
+     font-family: 'Inter', system-ui, sans-serif;
+    
+    color: #3d3028;
+    min-height: 100vh;
+    margin: auto;
 }
 
 .form-group {
@@ -1556,11 +1786,14 @@ label {
     padding: 0;
 }*/
 
-body {
+#al-bodyUserPage {
     font-family: 'Inter', system-ui, sans-serif;
     background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
     color: #3d3028;
     min-height: 100vh;
+     
+  padding: 0;
+  margin: auto;
 }
 
 /* Main container */
@@ -2070,6 +2303,16 @@ body {
 }
 
 /* -------------------------------------------------------Admin page-------------------------------------*/
+
+
+
+#hr-body{
+     font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+    color: #3d3028;
+    min-height: 100vh;
+    margin: auto;
+}
 
 
 .moderation-feed,
