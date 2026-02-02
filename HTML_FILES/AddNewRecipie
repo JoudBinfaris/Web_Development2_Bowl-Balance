@@ -10,28 +10,28 @@
 
 
 
-    <body>
+    <body id="bd-body-AddRecipe">
 
 
-    <!-- Header -->
-    <header class="page-header">
-        <div class="header-content">
-            <div class="header-logo">
-                <img src="../IMAGES/logo.png" alt="Bowl & Balance Logo" class="logo-img">
-                <span class="logo-text">Bowl & Balance</span>
-            </div>
-            <div class="header-right">
-                <nav class="header-nav">
-                    <a href="UserPage.html" class="nav-link">Home</a>
-                    <a href="Recipes.html" class="nav-link">Recipes</a>
-                    <a href="MyRecipe.html" class="nav-link">My Recipes</a>
-                </nav>
-                <a href="index.html" class="header-signout">Sign Out</a>
-            </div>
-        </div>
-    </header>
+<!-- Header -->
+     <header class="page-header">
+      <div class="header-content">
+          <div class="header-logo">
+              <img src="../IMAGES/logo.png" alt="Bowl & Balance Logo" class="logo-img">
+              <span class="logo-text">Bowl & Balance</span>
+          </div>
+          <div class="header-right">
+              <nav class="header-nav">
+                  <a href="UserPage.html" class="nav-link">Home</a>
+                  <a href="Recipes.html" class="nav-link">Recipes</a>
+                  <a href="MyRecipe.html" class="nav-link">My Recipes</a>
+              </nav>
+              <a href="index.html" class="header-signout">Sign Out</a>
+          </div>
+      </div>
+  </header>
 
-        <main class="bd-page1">
+        <main id="bd-page1">
 
  <!-- the heading of the page-->
         <h1 id="bd-first-heading"> Add New Recipe</h1>
