@@ -375,15 +375,14 @@
 }
 /* ---------------------------------------------------------------Recipes page---------------------------------------------------*/
 /* ===== Recipes ===== */
- * { 
-  box-sizing: border-box; 
-  margin: 0;
-  padding: 0;
-}
+
 
 #ar-body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+  background-image: url(IMAGES/blurr2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);*/
   color: #3d3028;
   min-height: 100vh;
 }
@@ -445,14 +444,14 @@
   font-size: 14px;
   border: none;
   border-radius: 14px;
-  background: rgba(139, 111, 78, 0.9);
+  background: rgba(49, 84, 64, 0.9);
   color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 #arGo:hover {
-  background: rgba(139, 111, 78, 1);
+  background: rgba(49, 84, 64, 1);
   transform: translateY(-1px);
 }
 
