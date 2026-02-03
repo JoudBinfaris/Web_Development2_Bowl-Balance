@@ -1541,6 +1541,7 @@ label {
 
 
 /*-----------------------------------------------userPage----------------------------------------------------*/
+/*-----------------------------------------------userPage----------------------------------------------------*/
 /* Header */
 .page-header {
     background: rgba(255, 255, 255, 0.7);
@@ -1580,7 +1581,7 @@ label {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 900;
-    color: #000000;
+    color: rgb(1, 35, 28);
     letter-spacing: -1px;
 }
 
@@ -1597,7 +1598,7 @@ label {
 }
 
 .nav-link {
-    color: #000000;
+    color: rgb(1, 35, 28);
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -1617,7 +1618,7 @@ label {
 }
 
 .nav-link:hover {
-    color: #333333;
+    color: rgb(1, 30, 24);
 }
 
 .nav-link:hover::after {
@@ -1625,7 +1626,7 @@ label {
 }
 
 .nav-link.active {
-    color: #333333;
+    color: rgb(1, 30, 24);
     font-weight: 700;
 }
 
@@ -1683,7 +1684,7 @@ label {
 }
 
 .footer-link {
-    color: #000000;
+    color: rgb(1, 35, 28);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -1697,7 +1698,7 @@ label {
 }
 
 .footer-link:hover {
-    color: #333333;
+    color: rgb(1, 30, 24);
     background: rgba(3, 59, 47, 0.15);
 }
 
@@ -1784,7 +1785,7 @@ label {
 #al-bodyUserPage {
     font-family: 'Inter', system-ui, sans-serif;
     background: linear-gradient(135deg, #d4ede7 0%, #b8ddd4 100%);
-    color: #000000;
+    color: rgb(1, 35, 28);
     min-height: 100vh;
      
   padding: 0;
@@ -1806,7 +1807,7 @@ label {
 .welcome-note {
     font-size: 2.5rem;
     font-weight: 900;
-    color: #000000;
+    color: rgb(1, 35, 28);
     margin: 0;
     letter-spacing: -1px;
 }
@@ -1825,7 +1826,7 @@ label {
 .section-title {
     font-size: 1.7rem;
     font-weight: 800;
-    color: #000000;
+    color: rgb(1, 35, 28);
     margin-bottom: 28px;
     display: flex;
     align-items: center;
@@ -1885,7 +1886,7 @@ label {
 .detail-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #333333;
+    color: rgb(1, 30, 24);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 7px;
@@ -1894,7 +1895,7 @@ label {
 .detail-value {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #000000;
+    color: rgb(1, 35, 28);
 }
 
 /* Recipe Stats Section */
@@ -1967,7 +1968,7 @@ label {
 .up-stat-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #333333;
+    color: rgb(1, 30, 24);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -1975,7 +1976,7 @@ label {
 .up-stat-number {
     font-size: 2.2rem;
     font-weight: 900;
-    color: #000000;
+    color: rgb(1, 35, 28);
     letter-spacing: -1px;
     line-height: 1;
 }
@@ -1999,13 +2000,13 @@ label {
 }
 
 .my-recipes {
-    color: #000000;
+    color: rgb(1, 35, 28);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .my-recipes:hover {
-    color: #333333;
+    color: rgb(1, 30, 24);
     text-decoration: underline;
 }
 
@@ -2056,13 +2057,13 @@ label {
 .recipe-name-link {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #000000;
+    color: rgb(1, 35, 28);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .recipe-name-link:hover {
-    color: #333333;
+    color: rgb(1, 30, 24);
     text-decoration: underline;
 }
 
@@ -2195,7 +2196,7 @@ label {
     .favorites-table td::before {
         content: attr(data-label);
         font-weight: 700;
-        color: #333333;
+        color: rgb(1, 30, 24);
         display: block;
         margin-bottom: 8px;
         text-transform: uppercase;
@@ -2273,7 +2274,6 @@ label {
         height: 70px;
     }
 }
-
 
 
 /* -------------------------------------------------------Admin page-------------------------------------*/
