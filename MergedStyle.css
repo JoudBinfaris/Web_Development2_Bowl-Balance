@@ -1541,7 +1541,6 @@ label {
 
 
 /*-----------------------------------------------userPage----------------------------------------------------*/
-
 /* Header */
 .page-header {
     background: rgba(255, 255, 255, 0.7);
@@ -1581,7 +1580,7 @@ label {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 900;
-    color: #3d3028;
+    color: #000000;
     letter-spacing: -1px;
 }
 
@@ -1598,7 +1597,7 @@ label {
 }
 
 .nav-link {
-    color: #3d3028;
+    color: #000000;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -1613,12 +1612,12 @@ label {
     left: 0;
     width: 0;
     height: 2px;
-    background: #8b6f4e;
+    background: rgb(3, 59, 47);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #8b6f4e;
+    color: #333333;
 }
 
 .nav-link:hover::after {
@@ -1626,13 +1625,13 @@ label {
 }
 
 .nav-link.active {
-    color: #8b6f4e;
+    color: #333333;
     font-weight: 700;
 }
 
 .header-signout {
     padding: 10px 24px;
-    background: rgba(139, 111, 78, 0.9);
+    background: rgba(3, 59, 47, 0.9);
     color: white;
     text-decoration: none;
     border-radius: 12px;
@@ -1642,7 +1641,7 @@ label {
 }
 
 .header-signout:hover {
-    background: rgba(139, 111, 78, 1);
+    background: rgba(3, 59, 47, 1);
     transform: translateY(-2px);
 }
 
@@ -1684,7 +1683,7 @@ label {
 }
 
 .footer-link {
-    color: #3d3028;
+    color: #000000;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -1693,13 +1692,13 @@ label {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: rgba(139, 111, 78, 0.05);
+    background: rgba(3, 59, 47, 0.05);
     border-radius: 12px;
 }
 
 .footer-link:hover {
-    color: #8b6f4e;
-    background: rgba(139, 111, 78, 0.15);
+    color: #333333;
+    background: rgba(3, 59, 47, 0.15);
 }
 
 .footer-icon {
@@ -1710,7 +1709,7 @@ label {
     color: #666;
     font-size: 0.9rem;
     padding-top: 20px;
-    border-top: 1px solid rgba(139, 111, 78, 0.2);
+    border-top: 1px solid rgba(3, 59, 47, 0.2);
     width: 100%;
 }
 
@@ -1780,16 +1779,12 @@ label {
 }
 
 /* ===== USER PAGE ===== */
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}*/
+
 
 #al-bodyUserPage {
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
-    color: #3d3028;
+    background: linear-gradient(135deg, #d4ede7 0%, #b8ddd4 100%);
+    color: #000000;
     min-height: 100vh;
      
   padding: 0;
@@ -1811,7 +1806,7 @@ label {
 .welcome-note {
     font-size: 2.5rem;
     font-weight: 900;
-    color: #3d3028;
+    color: #000000;
     margin: 0;
     letter-spacing: -1px;
 }
@@ -1824,13 +1819,13 @@ label {
     backdrop-filter: blur(20px);
     border-radius: 22px;
     padding: 35px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(3, 59, 47, 0.12);
 }
 
 .section-title {
     font-size: 1.7rem;
     font-weight: 800;
-    color: #3d3028;
+    color: #000000;
     margin-bottom: 28px;
     display: flex;
     align-items: center;
@@ -1842,7 +1837,7 @@ label {
     display: block;
     width: 7px;
     height: 28px;
-    background: #8b6f4e;
+    background: rgb(3, 52, 41);
     border-radius: 4px;
 }
 
@@ -1859,8 +1854,7 @@ label {
     height: 170px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 10px 24px rgba(3, 59, 47, 0.18);
     transition: all 0.3s ease;
 }
 
@@ -1891,7 +1885,7 @@ label {
 .detail-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #8b6f4e;
+    color: #333333;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 7px;
@@ -1900,7 +1894,7 @@ label {
 .detail-value {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #3d3028;
+    color: #000000;
 }
 
 /* Recipe Stats Section */
@@ -1911,7 +1905,7 @@ label {
     padding: 35px;
     margin-bottom: 35px;
     margin-top: 35px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(3, 59, 47, 0.12);
 }
 
 .stats-grid {
@@ -1926,7 +1920,7 @@ label {
     backdrop-filter: blur(10px);
     border-radius: 18px;
     padding: 28px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 14px rgba(3, 59, 47, 0.08);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -1936,7 +1930,7 @@ label {
 .up-stat-card:hover {
     background: rgba(255, 255, 255, 0.8);
     transform: translateY(-2px);
-    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 7px 22px rgba(3, 59, 47, 0.14);
 }
 
 .up-stat-icon {
@@ -1946,7 +1940,7 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(139, 111, 78, 0.15);
+    background: rgba(3, 59, 47, 0.15);
     border-radius: 50%;
     transition: all 0.3s ease;
     flex-shrink: 0;
@@ -1959,7 +1953,7 @@ label {
 }
 
 .up-stat-card:hover .up-stat-icon {
-    background: rgba(139, 111, 78, 0.25);
+    background: rgba(3, 59, 47, 0.25);
     transform: scale(1.05);
 }
 
@@ -1973,7 +1967,7 @@ label {
 .up-stat-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #8b6f4e;
+    color: #333333;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -1981,14 +1975,14 @@ label {
 .up-stat-number {
     font-size: 2.2rem;
     font-weight: 900;
-    color: #3d3028;
+    color: #000000;
     letter-spacing: -1px;
     line-height: 1;
 }
 
 .up-stat-link {
     padding: 9px 18px;
-    background: rgba(139, 111, 78, 0.9);
+    background: rgba(3, 59, 47, 0.9);
     color: #ffffff;
     text-decoration: none;
     border-radius: 11px;
@@ -2000,18 +1994,18 @@ label {
 }
 
 .up-stat-link:hover {
-    background: rgba(139, 111, 78, 1);
+    background: rgba(3, 59, 47, 1);
     transform: translateY(-2px);
 }
 
 .my-recipes {
-    color: #3d3028;
+    color: #000000;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .my-recipes:hover {
-    color: #8b6f4e;
+    color: #333333;
     text-decoration: underline;
 }
 
@@ -2022,7 +2016,7 @@ label {
     border-radius: 22px;
     padding: 35px;
     margin-bottom: 35px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(3, 59, 47, 0.12);
 }
 
 .favorites-table {
@@ -2036,7 +2030,7 @@ label {
 }
 
 .favorites-table th {
-    background: rgba(139, 111, 78, 0.9);
+    background: rgba(3, 59, 47, 0.9);
     color: white;
     padding: 18px;
     text-align: left;
@@ -2046,7 +2040,7 @@ label {
 
 .favorites-table td {
     padding: 18px;
-    border-bottom: 1px solid rgba(61, 48, 40, 0.1);
+    border-bottom: 1px solid rgba(3, 59, 47, 0.1);
 }
 
 .favorites-table tr:last-child td {
@@ -2055,18 +2049,20 @@ label {
 
 .favorites-table tr:hover {
     background: rgba(255, 255, 255, 0.9);
+
+    transition: all 0.3s ease;
 }
 
 .recipe-name-link {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #3d3028;
+    color: #000000;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .recipe-name-link:hover {
-    color: #8b6f4e;
+    color: #333333;
     text-decoration: underline;
 }
 
@@ -2075,8 +2071,8 @@ label {
     height: 72px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2.5px solid white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2.5px solid rgba(3, 59, 47, 0.3);
+    box-shadow: 0 4px 12px rgba(3, 59, 47, 0.15);
 }
 
 .remove-link {
@@ -2094,30 +2090,6 @@ label {
 .remove-link:hover {
     background: rgb(210, 105, 105);
     transform: translateY(-2px);
-}
-
-/* Sign out section */
-.signout-section {
-    text-align: center;
-    margin-top: 45px;
-}
-
-.signout-link {
-    display: inline-block;
-    padding: 14px 36px;
-    background: rgba(61, 48, 40, 0.9);
-    color: white;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.signout-link:hover {
-    background: rgba(61, 48, 40, 1);
-    transform: translateY(-2px);
-    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.17);
 }
 
 
@@ -2223,7 +2195,7 @@ label {
     .favorites-table td::before {
         content: attr(data-label);
         font-weight: 700;
-        color: #8b6f4e;
+        color: #333333;
         display: block;
         margin-bottom: 8px;
         text-transform: uppercase;
@@ -2301,6 +2273,8 @@ label {
         height: 70px;
     }
 }
+
+
 
 /* -------------------------------------------------------Admin page-------------------------------------*/
 
