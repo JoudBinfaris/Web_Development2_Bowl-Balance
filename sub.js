@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (logInForm.checkValidity()) {
             event.preventDefault();
-            window.location.href = 'admin_page.html';
+            window.location.href = 'UserPage.html';
         } else {
             // This triggers the native browser popups (e.g., "Please fill out this field")
             logInForm.reportValidity();
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (logInForm.checkValidity()) {
             event.preventDefault();
-            window.location.href = 'signup.html';
+            window.location.href = 'AdminPage.html';
         } else {
             // This triggers the native browser popups (e.g., "Please fill out this field")
             logInForm.reportValidity();

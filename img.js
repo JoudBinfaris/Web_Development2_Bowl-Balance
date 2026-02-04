@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     signSubmitBtn.addEventListener('click', (event) => {
         
-        if (logInForm.checkValidity()) {
+        if (signUpForm.checkValidity()) {
             event.preventDefault();
             window.location.href = 'UserPage.html';
         } else {
             // This triggers the native browser popups (e.g., "Please fill out this field")
-            logInForm.reportValidity();
+            signUpForm.reportValidity();
         }
     });
 });
