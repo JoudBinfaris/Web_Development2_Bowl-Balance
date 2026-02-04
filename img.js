@@ -38,4 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+     const signSubmitBtn = document.getElementById('sign-submit');
+    const signUpForm = document.getElementById('signup-form');
+
+    signSubmitBtn.addEventListener('click', (event) => {
+        
+        if (logInForm.checkValidity()) {
+            event.preventDefault();
+            window.location.href = 'UserPage.html';
+        } else {
+            // This triggers the native browser popups (e.g., "Please fill out this field")
+            logInForm.reportValidity();
+        }
+    });
 });
