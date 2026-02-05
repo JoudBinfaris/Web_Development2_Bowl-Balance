@@ -2333,8 +2333,8 @@ label {
 
 
 #hr-body{
-     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+    font-family: 'Inter', system-ui, sans-serif;
+    background: url(IMAGES/blurr3.jpg);
     color: #3d3028;
     min-height: 100vh;
     margin: auto;
