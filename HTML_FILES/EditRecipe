@@ -27,7 +27,7 @@
                     <a href="AllRecipes.html" class="nav-link">Recipes</a>
                     <a href="MyRecipes.html" class="nav-link">My Recipes</a>
                 </nav>
-                <a href="index.html" class="header-signout">Sign Out</a>
+                <a href="login.html" class="header-signout">Sign Out</a>
             </div>
         </div>
     </header>
