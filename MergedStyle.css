@@ -567,250 +567,16 @@ div.container {
 
 /*-----------------------------------------------------Add Recipe page & Edit Recipe page-----------------------------------------------------------*/
 
-/* Header */
-.page-header {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    padding: 20px 0;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: #3d3028;
-    letter-spacing: -1px;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.header-nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.nav-link {
-    color: #3d3028;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #8b6f4e;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #8b6f4e;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.nav-link.active {
-    color: #8b6f4e;
-    font-weight: 700;
-}
-
-.header-signout {
-    padding: 10px 24px;
-    background: rgba(139, 111, 78, 0.9);
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.header-signout:hover {
-    background: rgba(139, 111, 78, 1);
-    transform: translateY(-2px);
-}
-
-/* Footer - Stacked Simple */
-.page-footer {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    padding: 40px 0;
-    margin-top: 60px;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    text-align: center;
-}
-
-.footer-links {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-link {
-    color: #3d3028;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background: rgba(139, 111, 78, 0.05);
-    border-radius: 12px;
-}
-
-.footer-link:hover {
-    color: #8b6f4e;
-    background: rgba(139, 111, 78, 0.15);
-}
-
-.footer-icon {
-    font-size: 1.2rem;
-}
-
-.footer-copyright {
-    color: #666;
-    font-size: 0.9rem;
-    padding-top: 20px;
-    border-top: 1px solid rgba(139, 111, 78, 0.2);
-    width: 100%;
-}
-
-/* Responsive Header & Footer */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .header-right {
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .header-nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-link {
-        font-size: 0.9rem;
-    }
-
-    .header-signout {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-link {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .logo-text {
-        font-size: 1.2rem;
-    }
-
-    .logo-img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .header-nav {
-        gap: 10px;
-    }
-
-    .nav-link {
-        font-size: 0.85rem;
-    }
-
-    .footer-link {
-        font-size: 0.85rem;
-    }
-}
-
 
 
 /* the body*/
 #bd-body-EditRecipe,
 #bd-body-AddRecipe {
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+   background-image: url(IMAGES/blurr19.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+background-position: center;
     color: #3d3028;
     min-height: 100vh;
     margin: 0;
@@ -819,7 +585,7 @@ div.container {
 
 /* the main */
 #bd-page1 {
-    background-color: rgba(255, 255, 255, 0.4);
+
 
     /* Make it centered and not too wide */
     max-width: 1100px;
@@ -831,20 +597,31 @@ div.container {
     /* inner spacing */
     padding-bottom: 80px;
 
-    border-radius: 2rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 2rem; background: rgba(255, 255, 255, 0.50);       /* أغمق من 0.4 */
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(3, 59, 47, 0.12);
+  box-shadow: 0 12px 30px rgba(3, 59, 47, 0.12);box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* headings*/
 #bd-first-heading {
+    
+    margin:30px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 #bd-second-heading {
+    
+    margin:30px;
+    font-size: 1.5rem;
+    font-weight:600;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
     text-align: center;
-    margin-bottom: 35px;
-    color: #5e5757;
 }
 
 /* to add space for the form */
@@ -1055,7 +832,7 @@ label {
     border: none;
     border-radius: 14px;
 
-    background: rgba(139, 111, 78, 0.9);
+   background: rgba(3, 59, 47, 0.9);
     color: white;
 
     font-size: 15px;
@@ -1068,10 +845,24 @@ label {
 .addRecipe-btn:hover,
 .updateRecipe-btn:hover,
 .addStep-btn:hover {
-    background: rgba(139, 111, 78, 1);
+   background: rgba(3, 59, 47, 0.9);
     transform: translateY(-2px);
     box-shadow: 0 8px 18px
 }
+
+
+
+#bd-container1-div,
+#bd-description-div,
+#upload-recipe-pic,
+#bd-ingrediants-div,
+#bd-instructions-div,
+#bd-uploadVid-div{
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(3, 59, 47, 0.12);
+  box-shadow: 0 6px 16px rgba(3, 59, 47, 0.08);
+}
+
 
 
 
@@ -1176,9 +967,6 @@ label {
 /*----------------------------------------------My Recipe page----------------------------------------------*/
 
 
-
-
-
 /* responsive of the page */
 
 /* Tablet */
@@ -1273,39 +1061,36 @@ label {
 
 #bd-bodyMyRecipe {
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
-    color: #3d3028;
+    background-image: url(IMAGES/blurr18.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+background-position: center;
+    width:100%;
     min-height: 100vh;
     margin: auto;
+   
 }
-
-
 
 /* صفحة My Recipes */
 #bd-page2 {
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+
 
     width: 100%;
-    margin: 4% auto;
-
-    padding: 30px 30px 90px;
-
-    border-radius: 25px;
-
-    font-family: system-ui, Arial, sans-serif;
-    color: #3d3028;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    margin: 0;
-    padding: 0;
+    
 }
+
+
 
 
 /* العنوان */
 #bd-third-heading {
+   
+    margin:80px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
     text-align: center;
-    margin-bottom: 25px;
-    color: #3d3028;
 }
 
 
@@ -1320,7 +1105,7 @@ label {
 
     padding: 10px 18px;
 
-    background: rgba(139, 111, 78, 0.9);
+   background: rgba(3, 59, 47, 0.9);
     color: white;
 
     font-weight: bold;
@@ -1330,7 +1115,15 @@ label {
     font-family: system-ui, Arial, sans-serif;
 
     margin-bottom: 20px;
+
+ transition: all 0.3s ease;
 }
+
+#bd-addRecipe-link-btn:hover {
+    background: rgba(3, 59, 47, 1);
+    transform: translateY(-2px);
+}
+
 
 
 
@@ -1349,19 +1142,25 @@ label {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 
     border-collapse: collapse;
-    /* إزالة الفواصل */
+    table-layout: auto;
+    
 }
 
 
 /* رأس الجدول */
 #bd-page2 thead td {
-    background: rgba(139, 111, 78, 0.95);
+   background: rgba(3, 59, 47, 0.9);
     color: white;
+    padding: 18px;
+   
+    font-weight: 700;
+    font-size: 1rem;
+    
 
-    padding: 15px;
-
-    font-weight: bold;
     text-align: center;
+    vertical-align: middle;
+    word-break: normal;
+    white-space: normal;
 }
 
 
@@ -1371,8 +1170,12 @@ label {
 
     font-size: 14px;
 
-    vertical-align: middle;
+    
+
     text-align: center;
+    vertical-align: middle;
+    word-break: normal;
+    white-space: normal;
 }
 
 
@@ -1383,7 +1186,8 @@ label {
 
 
 /* القوائم */
-#bd-page2 ul {
+#bd-page2 ol {
+      list-style-type: decimal; 
     margin: 0;
     padding-left: 18px;
     text-align: left;
@@ -1415,6 +1219,17 @@ label {
 }
 
 
+.bd-MyRecipePhoto{
+ width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid rgba(3, 59, 47, 0.3);
+    box-shadow: 0 4px 12px rgba(3, 59, 47, 0.15);
+}
+
+
+
 /* اسم الوصفة */
 #bd-page2 td:first-child a {
     color: #3d3028;
@@ -1423,49 +1238,61 @@ label {
     text-decoration: none;
 }
 
+
 #bd-page2 td:first-child a:hover {
-    color: #7b5f3e;
+    color: rgb(1, 30, 24);
+    text-decoration: underline;
 }
 
 
 /* أزرار Edit / Delete */
-#bd-page2 td a {
-    display: inline-block;
-
-    padding: 6px 14px;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.8);
-
-    border: 1px solid rgba(61, 48, 40, 0.2);
-
-    color: #3d3028;
+.bd-delete-btn {
+   padding: 9px 18px;
+    background: rgba(236, 135, 135, 0.9);
+    color: darkred;
     text-decoration: none;
-
+    border-radius: 11px;
     font-weight: 600;
-
-    transition: 0.2s;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-#bd-page2 td a:hover {
-    background: rgba(255, 255, 255, 1);
-    color: #7b5f3e;
-}
-
-
-/* روابط الجدول */
-#bd-page2 table a:link,
-#bd-page2 table a:visited {
-    color: #3d3028;
+.bd-edit-btn{
+    padding: 9px 18px;
+    background:rgb(173, 171, 171);
+    color: darkred;
     text-decoration: none;
+    border-radius: 11px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 
-/* تثبيت لون زر Add */
+.bd-edit-btn:hover{
+     background: rgb(92, 88, 88);
+    transform: translateY(-2px);
+}
+.bd-delete-btn:hover {
+    background: rgb(210, 105, 105);
+    transform: translateY(-2px);
+}
+
+.bd-MyRecipeVideo:link ,
+.bd-MyRecipeVideo:visited 
+{
+  text-decoration: lightpink;
+ 
+}
+
+
+
+
 #bd-addRecipe-link-btn:link,
 #bd-addRecipe-link-btn:visited {
-    color: white;
+    text-decoration: none;
 }
 
 
@@ -1605,7 +1432,7 @@ label {
 }
 
 
-/*-----------------------------------------------userPage----------------------------------------------------*/
+
 /*-----------------------------------------------userPage----------------------------------------------------*/
 /* Header */
 .page-header {
