@@ -241,16 +241,6 @@
 
 /* --------------------------------------------------------viewRecipe Page*---------------------------------------------------------*/
 
-
-
-/* ViewRecipe Page - Subtle Animations */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 /* Background */
 #bg {
     font-family: 'Inter', system-ui, sans-serif;
