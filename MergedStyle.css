@@ -667,6 +667,9 @@ form {
     border-top: 1px solid rgba(3, 59, 47, 0.2);
     width: 100%;
 }
+.date{
+    color:gray;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
