@@ -669,6 +669,7 @@ form {
 }
 .date{
     color:gray;
+    margin-left: auto;
 }
 
 /* Responsive Design */
