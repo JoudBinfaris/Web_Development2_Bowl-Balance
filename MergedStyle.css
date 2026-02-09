@@ -812,7 +812,7 @@ form {
 
 #ar-body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-image: url(IMAGES/blurr3.jpg);
+    background-image: url(IMAGES/blurr20.png);
     background-repeat: no-repeat;
     background-size: cover;
     /*background: linear-gradient(135deg, #d4ede7 0%, #b8ddd4 100%);*/
@@ -1127,7 +1127,7 @@ form {
 #bd-body-EditRecipe,
 #bd-body-AddRecipe {
     font-family: 'Inter', system-ui, sans-serif;
-   background-image: url(IMAGES/blurr19.jpg);
+   background-image: url(IMAGES/blurr20.png);
    background-repeat: no-repeat;
     background-size: cover;
 background-position: center;
@@ -1615,7 +1615,7 @@ label {
 
 #bd-bodyMyRecipe {
     font-family: 'Inter', system-ui, sans-serif;
-    background-image: url(IMAGES/blurr18.jpg);
+    background-image: url(IMAGES/blurr20.png);
     background-repeat: no-repeat;
     background-size: cover;
 background-position: center;
@@ -1853,7 +1853,9 @@ background-position: center;
 
 /*----------------------------------------------------------login page-------------------------------------------*/
 #auth-body {
-    background-image: url(IMAGES/bg.png);
+    background-image: url(IMAGES/blurr20.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Inter', system-ui, sans-serif;
     color: rgb(1, 35, 28);
     min-height: 100vh;
@@ -1994,7 +1996,7 @@ background-position: center;
 
 #al-body {
             font-family: 'Inter', system-ui, sans-serif;
-            background-image: url('IMAGES/blurr4.jpg');
+            background-image: url('IMAGES/blurr20.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -2493,7 +2495,7 @@ background-position: center;
 
 #hr-body {
     font-family: 'Inter', system-ui, sans-serif;
-    background: url(IMAGES/blurr3.jpg);
+    background: url(IMAGES/blurr20.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
