@@ -100,6 +100,116 @@ addStepBtn.onclick = function(){
 
 const form = document.getElementById("bd-addRecipeForm");
 
+
+
+
+// =========================
+// Video Preview (Edit Page)
+// =========================
+
+// Get video input elements
+const videoFileInput = document.getElementById("bd-videoFile");
+const videoUrlInput  = document.getElementById("bd-videoUrl");
+const videoPreview   = document.getElementById("bd-videoPreview");
+
+
+// When user selects a video file
+if (videoFileInput && videoPreview) {
+
+  videoFileInput.addEventListener("change", () => {
+
+    // Get selected file
+    const file = videoFileInput.files[0];
+    if (!file) return;
+
+    // Check if file is a video
+    if (!file.type.startsWith("video/")) {
+      alert("Please select a video file only");
+      videoFileInput.value = "";
+      videoPreview.style.display = "none";
+      return;
+    }
+
+    // Clear URL input when file is selected
+    if (videoUrlInput) videoUrlInput.value = "";
+
+    // Create temporary URL for preview
+    const url = URL.createObjectURL(file);
+
+    // Show video preview
+    videoPreview.src = url;
+    videoPreview.style.display = "block";
+    videoPreview.load();
+  });
+}
+
+
+// When user types a video URL
+if (videoUrlInput && videoPreview) {
+
+  videoUrlInput.addEventListener("input", () => {
+
+    // Get URL value
+    const url = videoUrlInput.value.trim();
+
+    // Clear file input when URL is entered
+    if (url !== "" && videoFileInput) {
+      videoFileInput.value = "";
+    }
+
+    // Hide preview if URL is empty
+    if (url === "") {
+      videoPreview.style.display = "none";
+      videoPreview.removeAttribute("src");
+      return;
+    }
+
+    // Show video preview from URL
+    videoPreview.src = url;
+    videoPreview.style.display = "block";
+    videoPreview.load();
+  });
+}
+
+
+
+
+
+// =========================
+// Image Preview
+// =========================
+
+const photoInput   = document.getElementById("bd-photoFile");
+const photoPreview = document.getElementById("bd-photoPreview");
+
+if (photoInput && photoPreview) {
+
+  photoInput.addEventListener("change", () => {
+
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    // Check if file is image
+    if (!file.type.startsWith("image/")) {
+      alert("Please select an image only");
+      photoInput.value = "";
+      photoPreview.style.display = "none";
+      return;
+    }
+
+    const url = URL.createObjectURL(file);
+
+    photoPreview.src = url;
+    photoPreview.style.display = "block";
+  });
+
+}
+
+
+
+
+
+
 form.onsubmit = function(e){
 
   // 1) Recipe name
@@ -122,23 +232,6 @@ form.onsubmit = function(e){
 
 
 // 3) Photo 
-const photo = document.querySelector("input[name='upload-recipe-pic']");
-
-if(!photo || photo.files.length === 0){
-  alert("Please upload a recipe photo");
-  photo.focus();
-  e.preventDefault();
-  return;
-}
-
-// Check if file is image
-if (!photo.files[0].type.startsWith("image/")) {
-  alert("Only image files are allowed");
-  photo.value = "";
-  photo.focus();
-  e.preventDefault();
-  return;
-}
 
 
 
@@ -176,12 +269,8 @@ if (!photo.files[0].type.startsWith("image/")) {
     }
   }
 
-  // 5) Video
-  const videoFile = document.querySelector("input[name='bd-uploadVid-div']");
-  const videoUrl  = document.querySelector("#bd-uploadVid-div textarea");
-
-  const hasFile = videoFile && videoFile.files && videoFile.files.length > 0;
-  const hasUrl  = videoUrl.value.trim() !== "";
+ 
+  
 
   // to locate the user to my recipe page after submitting 
   e.preventDefault();
@@ -313,6 +402,120 @@ addStepBtn.onclick = function(){
 
 const form = document.getElementById("bd-addRecipeForm");
 
+
+
+
+
+
+// =========================
+// Video Preview (Edit Page)
+// =========================
+
+// Get video input elements
+const videoFileInput = document.getElementById("bd-videoFile");
+const videoUrlInput  = document.getElementById("bd-videoUrl");
+const videoPreview   = document.getElementById("bd-videoPreview");
+
+
+// When user selects a video file
+if (videoFileInput && videoPreview) {
+
+  videoFileInput.addEventListener("change", () => {
+
+    // Get selected file
+    const file = videoFileInput.files[0];
+    if (!file) return;
+
+    // Check if file is a video
+    if (!file.type.startsWith("video/")) {
+      alert("Please select a video file only");
+      videoFileInput.value = "";
+      videoPreview.style.display = "none";
+      return;
+    }
+
+    // Clear URL input when file is selected
+    if (videoUrlInput) videoUrlInput.value = "";
+
+    // Create temporary URL for preview
+    const url = URL.createObjectURL(file);
+
+    // Show video preview
+    videoPreview.src = url;
+    videoPreview.style.display = "block";
+    videoPreview.load();
+  });
+}
+
+
+// When user types a video URL
+if (videoUrlInput && videoPreview) {
+
+  videoUrlInput.addEventListener("input", () => {
+
+    // Get URL value
+    const url = videoUrlInput.value.trim();
+
+    // Clear file input when URL is entered
+    if (url !== "" && videoFileInput) {
+      videoFileInput.value = "";
+    }
+
+    // Hide preview if URL is empty
+    if (url === "") {
+      videoPreview.style.display = "none";
+      videoPreview.removeAttribute("src");
+      return;
+    }
+
+    // Show video preview from URL
+    videoPreview.src = url;
+    videoPreview.style.display = "block";
+    videoPreview.load();
+  });
+}
+
+
+
+
+// =========================
+// Image Preview
+// =========================
+
+const photoInput   = document.getElementById("bd-photoFile");
+const photoPreview = document.getElementById("bd-photoPreview");
+
+if (photoInput && photoPreview) {
+
+  photoInput.addEventListener("change", () => {
+
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    // Check if file is image
+    if (!file.type.startsWith("image/")) {
+      alert("Please select an image only");
+      photoInput.value = "";
+      photoPreview.style.display = "none";
+      return;
+    }
+
+    const url = URL.createObjectURL(file);
+
+    photoPreview.src = url;
+    photoPreview.style.display = "block";
+  });
+
+}
+
+
+
+
+
+
+
+
+
 form.onsubmit = function(e){
 
   // 1) Recipe name
@@ -335,28 +538,7 @@ form.onsubmit = function(e){
 
 
 // 3) Photo 
-const photo = document.querySelector("input[name='upload-recipe-pic']");
 
-/*if(!photo || photo.files.length === 0){
-  alert("Please upload a recipe photo");
-  photo.focus();
-  e.preventDefault();
-  return;
-}
-  */ //because already the picture is uploaded 
-
-  // Check if file is image
-/*if (!photo.files[0].type.startsWith("image/")) {
-  alert("Only image files are allowed");
-  photo.value = "";
-  photo.focus();
-  e.preventDefault();
-  return;
-}
-
-*/
-
- //because already the picture is uploaded 
 
 
   // 3) Ingredients 
@@ -393,12 +575,9 @@ const photo = document.querySelector("input[name='upload-recipe-pic']");
     }
   }
 
-  // 5) Video
-  const videoFile = document.querySelector("input[name='bd-uploadVid-div']");
-  const videoUrl  = document.querySelector("#bd-uploadVid-div textarea");
+ 
 
-  const hasFile = videoFile && videoFile.files && videoFile.files.length > 0;
-  const hasUrl  = videoUrl.value.trim() !== "";
+
 
 
   // to locate the user yo my recipe page after submitting

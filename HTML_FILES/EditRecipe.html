@@ -64,12 +64,36 @@
         </div>
 
 <div id="bd-container3-div">
-       <div id="upload-recipe-pic">
-        <label>Upload photo:</label>
-        <input type="file" name="upload-recipe-pic">
-        <img src="../IMAGES/Berry Yogurt .png" width="200">
 
-       </div>
+<div id="upload-recipe-pic">
+
+  <div class="pic-left">
+    <div class="pic-row">
+      <label>Upload photo:</label>
+      <input type="file"
+             id="bd-photoFile"
+             name="upload-recipe-pic"
+             accept="image/*">
+    </div>
+  </div>
+
+  <div class="pic-right">
+    <label>Current Picture:</label>
+
+    <img id="bd-photoPreview"
+         src="../IMAGES/Berry Yogurt .png"
+         style="display:block;">
+  </div>
+
+</div>
+
+
+
+
+
+       
+        
+       
 
        <div id="bd-ingrediants-div">
   <label>Ingredients:</label>
@@ -100,12 +124,20 @@
 
 
        <div id="bd-uploadVid-div">
-        <label> Upload video:</label>
-         <input type="file" name="bd-uploadVid-div">
-         <label>Video URL:</label>
-         <textarea  rows="2" cols="60"></textarea>
-       </div> 
+  <div class="vid-left">
+    <label>Upload video:</label>
+    <input type="file" id="bd-videoFile" accept="video/*">
+
+    <label>Video URL:</label>
+    <textarea id="bd-videoUrl" rows="2" cols="60" placeholder="https://..."></textarea>
+  </div>
+
+  <div class="vid-right">
+    <label class="currentVidLabel">Current Video:</label>
+    <video id="bd-videoPreview" controls style="display:none;"></video>
+  </div>
 </div>
+
        <button id="bd-updateRecipe-btn" class="updateRecipe-btn">Update Recipe</button>
        </form>
 

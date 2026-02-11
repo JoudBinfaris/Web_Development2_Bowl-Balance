@@ -1270,17 +1270,72 @@ label {
 }
 
 /* Upload photo */
-#upload-recipe-pic {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+/* =========================
+   IMAGE BOX (same as video)
+   ========================= */
 
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
+#upload-recipe-pic{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 
-    flex-wrap: wrap;
+  padding: 18px;
+  border-radius: 14px;
+
+  flex-wrap: wrap;
 }
+
+/* left side */
+#upload-recipe-pic .pic-left{
+  flex: 1;
+  min-width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* label + input row */
+#upload-recipe-pic .pic-row{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+#upload-recipe-pic .pic-row label{
+  white-space: nowrap;
+}
+
+/* right side (preview card) */
+#upload-recipe-pic .pic-right{
+  flex: 0 0 240px;
+  width: 240px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(3, 59, 47, 0.12);
+  box-shadow: 0 6px 16px rgba(3, 59, 47, 0.08);
+}
+
+/* image preview (same size as video) */
+#bd-photoPreview{
+  width: 100%;
+  height: 140px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: #f5f5f5;
+
+  object-fit: cover;
+}
+
 
 /* Ingredients box */
 #bd-ingrediants-div {
@@ -1352,29 +1407,88 @@ label {
     resize: vertical;
 }
 
-/* Upload video box */
-#bd-uploadVid-div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+/* =========================
+   VIDEO BOX (same style as rest)
+   ========================= */
 
-    padding: 18px;
-    border: 1px solid #ddd;
-    border-radius: 14px;
+#bd-uploadVid-div{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 
-    flex-wrap: wrap;
+  padding: 18px;
+  border-radius: 14px;
+
+  flex-wrap: wrap; /* لو صغرت الشاشة ينزل */
 }
 
-#bd-uploadVid-div textarea {
-    width: 50%;
-    min-width: 260px;
+/* يسار: صفوف مرتبة مثل باقي الديفات */
+#bd-uploadVid-div .vid-left{
+  flex: 1;
+  min-width: 320px;
 
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
-    font-family: 'Times New Roman', Times, serif;
+/* كل سطر: label + field مثل تصميمك */
+#bd-uploadVid-div .vid-row{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+#bd-uploadVid-div .vid-row label{
+  white-space: nowrap;
+}
+
+/* input file */
+#bd-videoFile{
+  flex: 1;
+  min-width: 260px;
+}
+
+/* textarea نفس ستايل حقك */
+#bd-videoUrl{
+  flex: 1;
+  min-width: 260px;
+
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  resize: vertical;
+}
+
+/* يمين: كارد Current Video مثل الباقي */
+#bd-uploadVid-div .vid-right{
+  flex: 0 0 240px;
+  width: 240px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(3, 59, 47, 0.12);
+  box-shadow: 0 6px 16px rgba(3, 59, 47, 0.08);
+}
+
+#bd-videoPreview{
+  width: 100% !important;
+  height: 140px !important;
+
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: #000;
+
+  object-fit: cover;
 }
 
 /* to unify the buttons */
@@ -1754,7 +1868,8 @@ background-position: center;
 
 
 /* عمود الوصفة (صورة + اسم) */
-#bd-page2 td:first-child {
+#bd-page2 tbody td:first-child
+ {
     display: flex;
     flex-direction: column;
 
