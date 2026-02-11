@@ -2684,7 +2684,7 @@ background-position: center;
 
         #home-body {
             /* Replace with your actual blurred food background image */
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('IMAGES/blurr2.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('IMAGES/blurr20.png');
             background-size: cover;
             background-attachment: fixed;
             height: 100vh;
@@ -2695,7 +2695,7 @@ background-position: center;
 
         /* Header & Logo */
         .home-head {
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             position: relative;
