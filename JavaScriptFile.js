@@ -131,6 +131,15 @@ if(!photo || photo.files.length === 0){
   return;
 }
 
+// Check if file is image
+if (!photo.files[0].type.startsWith("image/")) {
+  alert("Only image files are allowed");
+  photo.value = "";
+  photo.focus();
+  e.preventDefault();
+  return;
+}
+
 
 
   // 3) Ingredients 
@@ -181,6 +190,24 @@ if(!photo || photo.files.length === 0){
 
 };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------------------------------------------------------------------EditRecipe page---------------------------------------------------------------*/ 
 
 if(page.includes("editrecipe")){
@@ -318,6 +345,18 @@ const photo = document.querySelector("input[name='upload-recipe-pic']");
 }
   */ //because already the picture is uploaded 
 
+  // Check if file is image
+/*if (!photo.files[0].type.startsWith("image/")) {
+  alert("Only image files are allowed");
+  photo.value = "";
+  photo.focus();
+  e.preventDefault();
+  return;
+}
+
+*/
+
+ //because already the picture is uploaded 
 
 
   // 3) Ingredients 

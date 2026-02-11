@@ -1,251 +1,809 @@
-/* --------------------------------------------------------viewRecipe Page*---------------------------------------------------------*/
-#bg {
-    background-image: url(IMAGES/bg.png);
+
+/* --------------------------------------------------------header & footer---------------------------------------------------------*/
+
+/* Header */
+.page-header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 20px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: auto;
+    height: 85px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgb(1, 35, 28);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(3, 59, 47);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgb(1, 30, 24);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: rgb(1, 30, 24);
+    font-weight: 700;
+}
+
+.header-signout {
+    padding: 10px 24px;
+    background: rgba(3, 59, 47, 0.9);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.header-signout:hover {
+    background: rgba(3, 59, 47, 1);
+    transform: translateY(-2px);
+}
+
+/* Footer - Stacked Simple */
+.page-footer {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 40px 0;
+    margin-top: 60px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-link {
+    color: rgb(1, 35, 28);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(3, 59, 47, 0.05);
+    border-radius: 12px;
+}
+
+.footer-link:hover {
+    color: rgb(1, 30, 24);
+    background: rgba(3, 59, 47, 0.15);
+}
+
+.footer-icon {
+    font-size: 1.2rem;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid rgba(3, 59, 47, 0.2);
+    width: 100%;
+}
+
+/* Responsive Header & Footer */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .header-nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .header-signout {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-nav {
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .footer-link {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* --------------------------------------------------------viewRecipe Page*---------------------------------------------------------*/
+
+
+
+/* ViewRecipe Page - Subtle Animations */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background */
+#bg {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-image: url(IMAGES/blurr20.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #3d3028;
+    min-height: 100vh;
+}
+
+
+/* Main Sheet Container */
 #Sheet {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.571);
     width: 60rem;
     margin-left: 20%;
     margin-top: 5%;
     margin-bottom: 5%;
-    padding-top: 2rem;
-    padding-bottom: 26rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 2rem;
-
-
-
-}
-
-
-.flexRow {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding-bottom: 1rem;
-
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
 }
 
 div.container {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin: 0;
 }
 
-.sectionHeader {
+/* Flex Row Layout */
+.flexRow {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Recipe Name/Title */
+.rname {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
+    font-size: 3rem;
+    color: rgb(1, 35, 28);
+    line-height: 1.2;
+    flex: 1;
+    min-width: 250px;
 }
 
-.sectionText {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-}
-
+/* Bowl Image */
 #bowlImg {
-    width: 17rem;
-
-
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
+#bowlImg:hover {
+    transform: scale(1.03);
+}
 
-#report,
+/* Author Section */
+.flexRow h2 {
+    font-size: 1.1rem;
+    color: rgba(3, 59, 47, 0.9);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.j-makerImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.j-makerImg:hover {
+    transform: scale(1.05);
+}
+
+/* Action Buttons */
+#like,
+#fav,
+#report {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
 #like,
 #fav {
-
-
-    padding: 0.5rem 0.8rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.5rem;
-}
-
-
-#report {
-    background-color: rgb(236, 135, 135);
-    color: darkred;
-    margin-left: 1rem;
-
-}
-
-#like {
-    margin-left: 23rem;
-    background-color: rgb(114, 214, 96);
-    color: darkgreen;
-
-}
-
-#fav {
-    background-color: rgb(114, 214, 96);
-    color: darkgreen;
-    margin-left: 1rem;
-
-}
-
-#post {
-    padding: 0.3rem 0.7rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.5rem;
-}
-
-#report:hover {
-    background-color: rgb(210, 105, 105);
+    background-color: rgba(114, 214, 96, 0.3);
+    color: #2d7a1f;
+    border: 2px solid rgba(114, 214, 96, 0.6);
 }
 
 #like:hover,
 #fav:hover {
-    background-color: rgb(90, 180, 75);
+    background-color: rgba(114, 214, 96, 0.6);
+    transform: translateY(-2px);
+}
+
+#report {
+    background-color: rgba(236, 135, 135, 0.3);
+    color: #8b0000;
+    border: 2px solid rgba(236, 135, 135, 0.6);
+}
+
+#report:hover {
+    background-color: rgba(236, 135, 135, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Category Badge */
+.rcategory {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgba(3, 59, 47, 0.15);
+    color: rgba(3, 59, 47, 0.9);
+    border-radius: 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+/* Description */
+.rdescription {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(3, 59, 47, 0.85);
+    margin-bottom: 2rem;
+}
+
+/* Section Headers */
+.j-sectionHeader  {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.75rem;
+    color: rgba(3, 59, 47, 0.95);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(3, 59, 47, 0.1);
+}
+
+/* Section Text (lists and paragraphs) */
+.j-sectionText {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(3, 59, 47, 0.85);
+}
+
+/* Ingredients and Instructions Lists */
+#indent,
+#indent2 {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#indent li,
+#indent2 li {
+    margin-bottom: 0.75rem;
+}
+
+#indent2 li {
+    margin-bottom: 1.25rem;
+}
+
+/* Comment Input */
+#comment {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(3, 59, 47, 0.2);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+#comment:focus {
+    outline: none;
+    border-color: rgba(3, 59, 47, 0.4);
+}
+
+/* Post Button */
+#post {
+    padding: 0.75rem 2rem;
+    background-color: rgba(3, 59, 47, 0.9);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 #post:hover {
-    background-color: gray;
+    background-color: rgba(3, 59, 47, 1);
+    transform: translateY(-2px);
 }
 
-
-
-
-.rname {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 5rem;
-
-}
-
-.rcategory {
-    font-size: 1rem;
-    background-color: darkgrey;
-    color: rgb(67, 66, 66);
-    padding: 0.5rem 0.8rem;
-    border: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 0.5rem;
-    display: inline-block;
+/* Comments Form */
+#j-form {
+    display: flex;
+    gap: 1rem;
     margin-bottom: 2rem;
-
+    flex-wrap: wrap;
 }
 
-.rdescription {
-    font-size: 1.5rem;
+::placeholder {
+    color:#222;
+    opacity: 0.7;
 }
 
-#comment {
-    border-radius: 1rem;
+/* Comments Section */
+#comments {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
+#comments .flexRow {
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: rgba(3, 59, 47, 0.03);
+    border-radius: 0.75rem;
+    margin-bottom: 0;
+    transition: background-color 0.3s ease;
+}
+
+#comments .flexRow:hover {
+    background-color: rgba(3, 59, 47, 0.06);
+}
+
+/* Profile Images in Comments */
 .profile {
-    width: 4rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 #comments p {
-    margin-left: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
-#indent,
-#indent2 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
+/* Header */
+.page-header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 20px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
-/* =========================
-   Phone responsive rules
-   ========================= */
-@media (max-width: 600px) {
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    /* Background + page spacing */
-    #bg {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
+.logo-img {
+    width: auto;
+    height: 60px;
+    border-radius: 50%;
+}
 
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgb(1, 35, 28);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(3, 59, 47);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgb(1, 30, 24);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: rgb(1, 30, 24);
+    font-weight: 700;
+}
+
+.header-signout {
+    padding: 10px 24px;
+    background: rgba(3, 59, 47, 0.9);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.header-signout:hover {
+    background: rgba(3, 59, 47, 1);
+    transform: translateY(-2px);
+}
+
+/* Footer - Stacked Simple */
+.page-footer {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    padding: 40px 0;
+    margin-top: 60px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-link {
+    color: rgb(1, 35, 28);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(3, 59, 47, 0.05);
+    border-radius: 12px;
+}
+
+.footer-link:hover {
+    color: rgb(1, 30, 24);
+    background: rgba(3, 59, 47, 0.15);
+}
+
+.footer-icon {
+    font-size: 1.2rem;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid rgba(3, 59, 47, 0.2);
+    width: 100%;
+}
+
+.date{
+    color:gray;
+    margin-left: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     #Sheet {
         width: auto;
         margin: 1rem;
-        padding: 1.25rem 1rem;
-        padding-bottom: 3rem;
-        /* remove the huge bottom space on mobile */
-        border-radius: 1.25rem;
+        padding: 2rem 1.5rem;
     }
 
-    div.container {
-        margin: 0;
-    }
-
-    /* Stack rows instead of forcing side-by-side */
     .flexRow {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.75rem;
     }
 
-    /* Title smaller on phone */
     .rname {
         font-size: 2.2rem;
-        line-height: 1.1;
-        margin: 0;
     }
 
-    /* Bowl image should not overflow */
     #bowlImg {
-        width: 10rem;
-
-        height: auto;
+        width: 100%;
+        max-width: 300px;
     }
 
-    /* Description text slightly smaller */
-    .rdescription {
-        font-size: 1.05rem;
-    }
-
-    /* Buttons: remove huge margin-left and make them wrap nicely */
     #like,
     #fav,
     #report {
-        margin-left: 0;
         width: 100%;
-        text-align: center;
     }
 
-    /* Comment input + post button full width */
-    #comment {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0.6rem 0.8rem;
+    form {
+        flex-direction: column;
     }
 
+    #comment,
     #post {
         width: 100%;
-        margin-top: 0.5rem;
-        text-align: center;
-    }
-
-    /* Comments layout */
-    .profile {
-        width: 3rem;
     }
 
     #comments .flexRow {
         flex-direction: row;
-        /* keep avatar + text side-by-side */
         align-items: center;
-        gap: 0.75rem;
     }
 
-    #comments p {
-        margin-left: 0;
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
     }
 
-    /* Indents smaller on phone */
+    .header-right {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .header-nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .header-signout {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #Sheet {
+        width: auto;
+        padding: 1.5rem 1rem;
+        margin: 1rem 0.5rem;
+        border-radius: 1rem;
+    }
+
+    .rname {
+        font-size: 1.8rem;
+    }
+
+    .sectionHeader {
+        font-size: 1.4rem;
+    }
+
     #indent,
     #indent2 {
-        margin-left: 1.2rem;
+        margin-left: 1rem;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-nav {
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .footer-link {
+        font-size: 0.85rem;
     }
 }
 
@@ -259,7 +817,7 @@ div.container {
 
 #ar-body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-image: url(IMAGES/blurr3.jpg);
+    background-image: url(IMAGES/blurr17.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     /*background: linear-gradient(135deg, #d4ede7 0%, #b8ddd4 100%);*/
@@ -283,9 +841,10 @@ div.container {
     flex-wrap: wrap;
     margin-bottom: 60px;
     padding: 20px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(3, 59, 47, 0.12);
+    box-shadow: 0 8px 32px rgba(4, 59, 3, 0.12);
+    background-color: rgba(255, 255, 255, 0.445);
     position: relative;
     z-index: 100;
 }
@@ -567,250 +1126,16 @@ div.container {
 
 /*-----------------------------------------------------Add Recipe page & Edit Recipe page-----------------------------------------------------------*/
 
-/* Header */
-.page-header {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    padding: 20px 0;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: #3d3028;
-    letter-spacing: -1px;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.header-nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.nav-link {
-    color: #3d3028;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #8b6f4e;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #8b6f4e;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.nav-link.active {
-    color: #8b6f4e;
-    font-weight: 700;
-}
-
-.header-signout {
-    padding: 10px 24px;
-    background: rgba(139, 111, 78, 0.9);
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.header-signout:hover {
-    background: rgba(139, 111, 78, 1);
-    transform: translateY(-2px);
-}
-
-/* Footer - Stacked Simple */
-.page-footer {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    padding: 40px 0;
-    margin-top: 60px;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    text-align: center;
-}
-
-.footer-links {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-link {
-    color: #3d3028;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background: rgba(139, 111, 78, 0.05);
-    border-radius: 12px;
-}
-
-.footer-link:hover {
-    color: #8b6f4e;
-    background: rgba(139, 111, 78, 0.15);
-}
-
-.footer-icon {
-    font-size: 1.2rem;
-}
-
-.footer-copyright {
-    color: #666;
-    font-size: 0.9rem;
-    padding-top: 20px;
-    border-top: 1px solid rgba(139, 111, 78, 0.2);
-    width: 100%;
-}
-
-/* Responsive Header & Footer */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .header-right {
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .header-nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-link {
-        font-size: 0.9rem;
-    }
-
-    .header-signout {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-link {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .logo-text {
-        font-size: 1.2rem;
-    }
-
-    .logo-img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .header-nav {
-        gap: 10px;
-    }
-
-    .nav-link {
-        font-size: 0.85rem;
-    }
-
-    .footer-link {
-        font-size: 0.85rem;
-    }
-}
-
 
 
 /* the body*/
 #bd-body-EditRecipe,
 #bd-body-AddRecipe {
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+   background-image: url(IMAGES/blurr20.png);
+   background-repeat: no-repeat;
+    background-size: cover;
+background-position: center;
     color: #3d3028;
     min-height: 100vh;
     margin: 0;
@@ -819,7 +1144,7 @@ div.container {
 
 /* the main */
 #bd-page1 {
-    background-color: rgba(255, 255, 255, 0.4);
+
 
     /* Make it centered and not too wide */
     max-width: 1100px;
@@ -831,20 +1156,31 @@ div.container {
     /* inner spacing */
     padding-bottom: 80px;
 
-    border-radius: 2rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 2rem; background: rgba(255, 255, 255, 0.50);       /* أغمق من 0.4 */
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(3, 59, 47, 0.12);
+  box-shadow: 0 12px 30px rgba(3, 59, 47, 0.12);box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* headings*/
 #bd-first-heading {
+    
+    margin:30px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 #bd-second-heading {
+    
+    margin:30px;
+    font-size: 1.5rem;
+    font-weight:600;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
     text-align: center;
-    margin-bottom: 35px;
-    color: #5e5757;
 }
 
 /* to add space for the form */
@@ -1055,7 +1391,7 @@ label {
     border: none;
     border-radius: 14px;
 
-    background: rgba(139, 111, 78, 0.9);
+   background: rgba(3, 59, 47, 0.9);
     color: white;
 
     font-size: 15px;
@@ -1068,10 +1404,24 @@ label {
 .addRecipe-btn:hover,
 .updateRecipe-btn:hover,
 .addStep-btn:hover {
-    background: rgba(139, 111, 78, 1);
+   background: rgba(3, 59, 47, 0.9);
     transform: translateY(-2px);
     box-shadow: 0 8px 18px
 }
+
+
+
+#bd-container1-div,
+#bd-description-div,
+#upload-recipe-pic,
+#bd-ingrediants-div,
+#bd-instructions-div,
+#bd-uploadVid-div{
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(3, 59, 47, 0.12);
+  box-shadow: 0 6px 16px rgba(3, 59, 47, 0.08);
+}
+
 
 
 
@@ -1176,9 +1526,6 @@ label {
 /*----------------------------------------------My Recipe page----------------------------------------------*/
 
 
-
-
-
 /* responsive of the page */
 
 /* Tablet */
@@ -1273,39 +1620,36 @@ label {
 
 #bd-bodyMyRecipe {
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
-    color: #3d3028;
+    background-image: url(IMAGES/blurr20.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+background-position: center;
+    width:100%;
     min-height: 100vh;
     margin: auto;
+   
 }
-
-
 
 /* صفحة My Recipes */
 #bd-page2 {
-    background: linear-gradient(135deg, #f5ebe0 0%, #e3d5ca 100%);
+
 
     width: 100%;
-    margin: 4% auto;
-
-    padding: 30px 30px 90px;
-
-    border-radius: 25px;
-
-    font-family: system-ui, Arial, sans-serif;
-    color: #3d3028;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    margin: 0;
-    padding: 0;
+    
 }
+
+
 
 
 /* العنوان */
 #bd-third-heading {
+   
+    margin:80px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgb(1, 35, 28);
+    letter-spacing: -1px;
     text-align: center;
-    margin-bottom: 25px;
-    color: #3d3028;
 }
 
 
@@ -1320,7 +1664,7 @@ label {
 
     padding: 10px 18px;
 
-    background: rgba(139, 111, 78, 0.9);
+   background: rgba(3, 59, 47, 0.9);
     color: white;
 
     font-weight: bold;
@@ -1330,7 +1674,15 @@ label {
     font-family: system-ui, Arial, sans-serif;
 
     margin-bottom: 20px;
+
+ transition: all 0.3s ease;
 }
+
+#bd-addRecipe-link-btn:hover {
+    background: rgba(3, 59, 47, 1);
+    transform: translateY(-2px);
+}
+
 
 
 
@@ -1349,19 +1701,25 @@ label {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 
     border-collapse: collapse;
-    /* إزالة الفواصل */
+    table-layout: auto;
+    
 }
 
 
 /* رأس الجدول */
 #bd-page2 thead td {
-    background: rgba(139, 111, 78, 0.95);
+   background: rgba(3, 59, 47, 0.9);
     color: white;
+    padding: 18px;
+   
+    font-weight: 700;
+    font-size: 1rem;
+    
 
-    padding: 15px;
-
-    font-weight: bold;
     text-align: center;
+    vertical-align: middle;
+    word-break: normal;
+    white-space: normal;
 }
 
 
@@ -1371,8 +1729,12 @@ label {
 
     font-size: 14px;
 
-    vertical-align: middle;
+    
+
     text-align: center;
+    vertical-align: middle;
+    word-break: normal;
+    white-space: normal;
 }
 
 
@@ -1383,7 +1745,8 @@ label {
 
 
 /* القوائم */
-#bd-page2 ul {
+#bd-page2 ol {
+      list-style-type: decimal; 
     margin: 0;
     padding-left: 18px;
     text-align: left;
@@ -1415,6 +1778,17 @@ label {
 }
 
 
+.bd-MyRecipePhoto{
+ width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid rgba(3, 59, 47, 0.3);
+    box-shadow: 0 4px 12px rgba(3, 59, 47, 0.15);
+}
+
+
+
 /* اسم الوصفة */
 #bd-page2 td:first-child a {
     color: #3d3028;
@@ -1423,56 +1797,70 @@ label {
     text-decoration: none;
 }
 
+
 #bd-page2 td:first-child a:hover {
-    color: #7b5f3e;
+    color: rgb(1, 30, 24);
+    text-decoration: underline;
 }
 
 
 /* أزرار Edit / Delete */
-#bd-page2 td a {
-    display: inline-block;
-
-    padding: 6px 14px;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.8);
-
-    border: 1px solid rgba(61, 48, 40, 0.2);
-
-    color: #3d3028;
+.bd-delete-btn {
+   padding: 9px 18px;
+    background: rgba(236, 135, 135, 0.9);
+    color: darkred;
     text-decoration: none;
-
+    border-radius: 11px;
     font-weight: 600;
-
-    transition: 0.2s;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-#bd-page2 td a:hover {
-    background: rgba(255, 255, 255, 1);
-    color: #7b5f3e;
-}
-
-
-/* روابط الجدول */
-#bd-page2 table a:link,
-#bd-page2 table a:visited {
-    color: #3d3028;
+.bd-edit-btn{
+    padding: 9px 18px;
+    background:rgb(173, 171, 171);
+    color: darkred;
     text-decoration: none;
+    border-radius: 11px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 
-/* تثبيت لون زر Add */
+.bd-edit-btn:hover{
+     background: rgb(92, 88, 88);
+    transform: translateY(-2px);
+}
+.bd-delete-btn:hover {
+    background: rgb(210, 105, 105);
+    transform: translateY(-2px);
+}
+
+.bd-MyRecipeVideo:link ,
+.bd-MyRecipeVideo:visited 
+{
+  text-decoration: lightpink;
+ 
+}
+
+
+
+
 #bd-addRecipe-link-btn:link,
 #bd-addRecipe-link-btn:visited {
-    color: white;
+    text-decoration: none;
 }
 
 
 
 /*----------------------------------------------------------login page-------------------------------------------*/
 #auth-body {
-    background-image: url(IMAGES/bg.png);
+    background-image: url(IMAGES/blurr20.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Inter', system-ui, sans-serif;
     color: rgb(1, 35, 28);
     min-height: 100vh;
@@ -1605,256 +1993,21 @@ label {
 }
 
 
+
 /*-----------------------------------------------userPage----------------------------------------------------*/
-/*-----------------------------------------------userPage----------------------------------------------------*/
-/* Header */
-.page-header {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    padding: 20px 0;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-img {
-    width: auto;
-    height: 85px;
-    border-radius: 50%;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: rgb(1, 35, 28);
-    letter-spacing: -1px;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.header-nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.nav-link {
-    color: rgb(1, 35, 28);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: rgb(3, 59, 47);
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-    color: rgb(1, 30, 24);
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.nav-link.active {
-    color: rgb(1, 30, 24);
-    font-weight: 700;
-}
-
-.header-signout {
-    padding: 10px 24px;
-    background: rgba(3, 59, 47, 0.9);
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.header-signout:hover {
-    background: rgba(3, 59, 47, 1);
-    transform: translateY(-2px);
-}
-
-/* Footer - Stacked Simple */
-.page-footer {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    padding: 40px 0;
-    margin-top: 60px;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    text-align: center;
-}
-
-.footer-links {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-link {
-    color: rgb(1, 35, 28);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background: rgba(3, 59, 47, 0.05);
-    border-radius: 12px;
-}
-
-.footer-link:hover {
-    color: rgb(1, 30, 24);
-    background: rgba(3, 59, 47, 0.15);
-}
-
-.footer-icon {
-    font-size: 1.2rem;
-}
-
-.footer-copyright {
-    color: #666;
-    font-size: 0.9rem;
-    padding-top: 20px;
-    border-top: 1px solid rgba(3, 59, 47, 0.2);
-    width: 100%;
-}
-
-/* Responsive Header & Footer */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 20px;
-    }
-
-    .header-right {
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .header-nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-link {
-        font-size: 0.9rem;
-    }
-
-    .header-signout {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-link {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .logo-text {
-        font-size: 1.2rem;
-    }
-
-    .logo-img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .header-nav {
-        gap: 10px;
-    }
-
-    .nav-link {
-        font-size: 0.85rem;
-    }
-
-    .footer-link {
-        font-size: 0.85rem;
-    }
-}
-
-/* ===== USER PAGE ===== */
 
 
-#al-bodyUserPage {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, #d4ede7 0%, #b8ddd4 100%);
-    color: rgb(1, 35, 28);
-    min-height: 100vh;
 
-    padding: 0;
-    margin: auto;
+
+#al-body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-image: url('IMAGES/blurr20.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #3d3028;
+            min-height: 100vh;
 }
 
 /* Main container */
@@ -2347,7 +2500,7 @@ label {
 
 #hr-body {
     font-family: 'Inter', system-ui, sans-serif;
-    background: url(IMAGES/blurr3.jpg);
+    background: url(IMAGES/blurr20.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
