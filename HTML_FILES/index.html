@@ -5,207 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bowl & Balance | Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../MergedStyle.css">
     <style>
         /* General Setup */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        #home-body {
-            /* Replace with your actual blurred food background image */
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('IMAGES/blurr2.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header & Logo */
-        .home-head {
-            background: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            position: relative;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            padding: 20px 0;
-        }
-
-        .home-head-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .home-contact-container {
-            display: flex;
-            gap: 0.2px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-right: 20px;
-        }
-
-
-        .home-contact {
-            color: #3d3028;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 5px 8px;
-            border-radius: 12px;
-
-        }
-
-        .home-contact:hover {
-            background: rgba(139, 111, 78, 0.15);
-        }
-
-        .home-icon {
-            font-size: 1.5rem;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .main-logo {
-            width: auto;
-            height: 85px;
-            border-radius: 50%;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-        }
-
-        .app-name {
-            font-size: 2rem;
-            font-weight: 900;
-            color: rgb(1, 35, 28);
-            letter-spacing: -1px;
-        }
-
-        /* Hero Section */
-        .hero-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-card {
-            width: 90%;
-            max-width: 600px;
-            padding: 50px;
-            text-align: center;
-        }
-
-        /* Glassmorphism Effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Text Styles */
-        .fade-in {
-            font-size: 2.8rem;
-            color: rgb(1, 35, 28);
-            line-height: 1.2;
-            margin-bottom: 15px;
-            animation: fadeInUp 1s ease-out;
-            /* Text Entrance Animation */
-        }
-
-        .highlight {
-            color: rgba(3, 59, 47, 0.9);
-            font-style: italic;
-        }
-
-        .hero-subtitle {
-            color: rgb(1, 35, 28);
-            font-size: 1.1rem;
-            margin-bottom: 35px;
-            font-weight: 500;
-        }
-
-        /* Buttons & Links */
-        .btn-login {
-            display: inline-block;
-            background: rgb(3, 59, 47);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: transform 0.3s ease, background 0.3s ease;
-            box-shadow: 0 4px 15px rgba(3, 59, 47, 0.3);
-        }
-
-        .btn-login:hover {
-            background: rgb(3, 52, 41);
-            transform: translateY(-3px);
-        }
-
-        .signup-text {
-            margin-top: 20px;
-            font-size: 0.95rem;
-            color: rgb(1, 35, 28);
-            font-weight: 500;
-        }
-
-        .signup-text a {
-            color: rgb(1, 35, 28);
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .home-head-container {
-                flex-direction: column;
-            }
-
-            .glass {
-                margin-top: 20px;
-            }
-
-            .home-contact-container {
-            margin-right: 0px;
-        }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .home-footer {
-            text-align: center;
-            padding: 20px;
-            color: rgb(1, 35, 28);
-            font-size: 0.8rem;
-            font-weight: 700;
         }
     </style>
 </head>
@@ -216,7 +22,7 @@
         <nav class="home-head">
             <div class="home-head-container">
                 <div class="logo-area">
-                    <img src="IMAGES/logo2.png" alt="Logo" class="main-logo">
+                    <img src="../IMAGES/logo.png" alt="Logo" class="main-logo">
                     <span class="app-name">Bowl & Balance</span>
                 </div>
 

@@ -2317,7 +2317,7 @@ background-position: center;
 
 /* Responsive design */
 @media (max-width: 768px) {
-    body {
+    #al-body {
         padding: 20px 10px;
     }
 
@@ -2690,6 +2690,7 @@ background-position: center;
             height: 100vh;
             display: flex;
             flex-direction: column;
+            font-family: 'Inter', system-ui, sans-serif;
         }
 
         /* Header & Logo */
