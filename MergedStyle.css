@@ -2317,9 +2317,7 @@ background-position: center;
 
 /* Responsive design */
 @media (max-width: 768px) {
-    #al-body {
-        padding: 20px 10px;
-    }
+    
 
     .user-container {
         padding: 20px 10px;
