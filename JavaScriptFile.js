@@ -64,9 +64,8 @@ addBtn.onclick = function(){
 };
 
 
-// =========================
 // Instructions
-// =========================
+
 const addStepBtn = document.getElementById("bd-addStep-btn");
 const stepsList = document.getElementById("steps-list");
 
@@ -103,9 +102,9 @@ const form = document.getElementById("bd-addRecipeForm");
 
 
 
-// =========================
+
 // Video Preview (Edit Page)
-// =========================
+
 
 // Get video input elements
 const videoFileInput = document.getElementById("bd-videoFile");
@@ -175,9 +174,8 @@ if (videoUrlInput && videoPreview) {
 
 
 
-// =========================
 // Image Preview
-// =========================
+
 
 const photoInput   = document.getElementById("bd-photoFile");
 const photoPreview = document.getElementById("bd-photoPreview");
@@ -231,7 +229,16 @@ form.onsubmit = function(e){
   }
 
 
-// 3) Photo 
+// 3) Photo (required)
+const photoInput = document.getElementById("bd-photoFile");
+
+if (!photoInput || !photoInput.files || photoInput.files.length === 0) {
+  alert("Photo is required");
+  photoInput.focus();
+  e.preventDefault();
+  return;
+}
+
 
 
 
@@ -359,9 +366,9 @@ addBtn.onclick = function(){
 };
 
 
-// =========================
+
 // Instructions
-// =========================
+
 const addStepBtn = document.getElementById("bd-addStep-btn");
 const stepsList = document.getElementById("steps-list");
 
@@ -407,9 +414,9 @@ const form = document.getElementById("bd-addRecipeForm");
 
 
 
-// =========================
-// Video Preview (Edit Page)
-// =========================
+
+// Video Preview 
+
 
 // Get video input elements
 const videoFileInput = document.getElementById("bd-videoFile");
@@ -478,9 +485,8 @@ if (videoUrlInput && videoPreview) {
 
 
 
-// =========================
 // Image Preview
-// =========================
+
 
 const photoInput   = document.getElementById("bd-photoFile");
 const photoPreview = document.getElementById("bd-photoPreview");
@@ -537,8 +543,16 @@ form.onsubmit = function(e){
   }
 
 
-// 3) Photo 
+// 3) Photo (required)
+/*const photoInput = document.getElementById("bd-photoFile");
 
+if (!photoInput || !photoInput.files || photoInput.files.length === 0) {
+  alert("Photo is required");
+  photoInput.focus();
+  e.preventDefault();
+  return;
+}
+*/ //since there is already a img sample 
 
 
   // 3) Ingredients 

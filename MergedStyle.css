@@ -1146,20 +1146,22 @@ background-position: center;
 #bd-page1 {
 
 
-    /* Make it centered and not too wide */
+  
     max-width: 1100px;
     width: 92%;
 
     margin: 50px auto;
-    /* center */
+   
     padding: 30px;
-    /* inner spacing */
+    
     padding-bottom: 80px;
 
-    border-radius: 2rem; background: rgba(255, 255, 255, 0.50);       /* أغمق من 0.4 */
+    border-radius: 2rem; 
+    background: rgba(255, 255, 255, 0.50);     
   backdrop-filter: blur(14px);
   border: 1px solid rgba(3, 59, 47, 0.12);
-  box-shadow: 0 12px 30px rgba(3, 59, 47, 0.12);box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* headings*/
@@ -1202,7 +1204,6 @@ label {
     gap: 15px;
 
     padding: 30px;
-    border: 1px solid #ddd;
     border-radius: 14px;
 
 
@@ -1240,7 +1241,7 @@ label {
     gap: 15px;
 
     padding: 18px;
-    border: 1px solid #ddd;
+  
     border-radius: 14px;
 }
 
@@ -1270,9 +1271,7 @@ label {
 }
 
 /* Upload photo */
-/* =========================
-   IMAGE BOX (same as video)
-   ========================= */
+
 
 #upload-recipe-pic{
   display: flex;
@@ -1324,7 +1323,7 @@ label {
   box-shadow: 0 6px 16px rgba(3, 59, 47, 0.08);
 }
 
-/* image preview (same size as video) */
+/* image preview  */
 #bd-photoPreview{
   width: 100%;
   height: 140px;
@@ -1344,7 +1343,7 @@ label {
     gap: 20px;
 
     padding: 18px;
-    border: 1px solid #ddd;
+
     border-radius: 14px;
 
     flex-wrap: wrap;
@@ -1380,7 +1379,7 @@ label {
     gap: 15px;
 
     padding: 18px;
-    border: 1px solid #ddd;
+
     border-radius: 14px;
 
     min-height: 120px;
@@ -1407,9 +1406,9 @@ label {
     resize: vertical;
 }
 
-/* =========================
-   VIDEO BOX (same style as rest)
-   ========================= */
+/*
+   VIDEO BOX 
+   */
 
 #bd-uploadVid-div{
   display: flex;
@@ -1419,10 +1418,10 @@ label {
   padding: 18px;
   border-radius: 14px;
 
-  flex-wrap: wrap; /* لو صغرت الشاشة ينزل */
+  flex-wrap: wrap; /*when screen is in smaller size it wraps*/
 }
 
-/* يسار: صفوف مرتبة مثل باقي الديفات */
+/* left*/
 #bd-uploadVid-div .vid-left{
   flex: 1;
   min-width: 320px;
@@ -1432,7 +1431,7 @@ label {
   gap: 14px;
 }
 
-/* كل سطر: label + field مثل تصميمك */
+
 #bd-uploadVid-div .vid-row{
   display: flex;
   align-items: center;
@@ -1450,7 +1449,7 @@ label {
   min-width: 260px;
 }
 
-/* textarea نفس ستايل حقك */
+/* textarea */
 #bd-videoUrl{
   flex: 1;
   min-width: 260px;
@@ -1463,7 +1462,7 @@ label {
   resize: vertical;
 }
 
-/* يمين: كارد Current Video مثل الباقي */
+/* right*/
 #bd-uploadVid-div .vid-right{
   flex: 0 0 240px;
   width: 240px;
@@ -1481,8 +1480,8 @@ label {
 }
 
 #bd-videoPreview{
-  width: 100% !important;
-  height: 140px !important;
+  width: 100% ;
+  height: 140px ;
 
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.18);
@@ -1542,10 +1541,9 @@ label {
 
 
 
-/* =========================================
-   RESPONSIVE ONLY (add at the very end)
-   No global reset, no body changes
-   ========================================= */
+/*
+   RESPONSIVE 
+   */
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -1744,7 +1742,7 @@ background-position: center;
    
 }
 
-/* صفحة My Recipes */
+/* My Recipes page */
 #bd-page2 {
 
 
@@ -1755,7 +1753,7 @@ background-position: center;
 
 
 
-/* العنوان */
+/* heading*/
 #bd-third-heading {
    
     margin:80px;
@@ -1767,7 +1765,7 @@ background-position: center;
 }
 
 
-/* زر Add Recipe */
+/* Add recipe button */
 #bd-addRecipe-link-btn {
     float: none;
     display: block;
@@ -1801,7 +1799,7 @@ background-position: center;
 
 
 
-/* الجدول */
+/* table*/
 #bd-page2 table {
     width: 80%;
 
@@ -1820,7 +1818,7 @@ background-position: center;
 }
 
 
-/* رأس الجدول */
+/* head of table*/
 #bd-page2 thead td {
    background: rgba(3, 59, 47, 0.9);
     color: white;
@@ -1837,7 +1835,7 @@ background-position: center;
 }
 
 
-/* خلايا الجدول */
+/* table cells*/
 #bd-page2 td {
     padding: 15px;
 
@@ -1852,13 +1850,13 @@ background-position: center;
 }
 
 
-/* Hover للصفوف */
+/* Hover for raws*/
 #bd-page2 tbody tr:hover {
     background: rgba(255, 255, 255, 0.45);
 }
 
 
-/* القوائم */
+/*lists*/
 #bd-page2 ol {
       list-style-type: decimal; 
     margin: 0;
@@ -1867,7 +1865,7 @@ background-position: center;
 }
 
 
-/* عمود الوصفة (صورة + اسم) */
+/* column that contains(pic+name)*/
 #bd-page2 tbody td:first-child
  {
     display: flex;
@@ -1879,7 +1877,7 @@ background-position: center;
 }
 
 
-/* صورة الوصفة (مربعة) */
+/* the recipe img*/
 #bd-page2 td:first-child img {
     width: 75px;
     height: 75px;
@@ -1904,7 +1902,7 @@ background-position: center;
 
 
 
-/* اسم الوصفة */
+/* recipe name*/
 #bd-page2 td:first-child a {
     color: #3d3028;
     font-weight: 700;
@@ -1919,7 +1917,7 @@ background-position: center;
 }
 
 
-/* أزرار Edit / Delete */
+/*   buttons of Edit / Delete */
 .bd-delete-btn {
    padding: 9px 18px;
     background: rgba(236, 135, 135, 0.9);
