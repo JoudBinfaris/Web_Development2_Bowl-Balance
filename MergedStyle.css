@@ -1837,7 +1837,6 @@ background-position: center;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     backdrop-filter: blur(20px);
-    padding: 35px;
     box-shadow: 0 10px 30px rgba(3, 59, 47, 0.12);
 }
 
@@ -1933,6 +1932,11 @@ background-position: center;
     /* The actual input is hidden */
 }
 
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 20px;
+    }
+}
 
 
 /*-----------------------------------------------userPage----------------------------------------------------*/
